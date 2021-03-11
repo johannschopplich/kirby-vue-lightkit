@@ -1,0 +1,32 @@
+title:
+  de: Redaktion
+  en: Staff
+
+tabs:
+  content:
+    label: Dashboard
+    icon: dashboard
+    sections:
+      pages:
+        type: pages
+        headline:
+          de: Seiten
+          en: Pages
+        status: all
+        create: default
+        info: "/{{ page.slug }}"
+        image:
+          back: white
+
+  seo:
+    label: SEO
+    icon: search
+    sections:
+      meta:
+        extends: sections/meta
+        type: fields
+        fields:
+          thumbnail:
+            query: site.files.filterBy('template', 'image')
+
+  images: tabs/images

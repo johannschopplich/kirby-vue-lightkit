@@ -1,0 +1,5 @@
+type: fields
+fields:
+  text:
+    label: Text
+    type: blocks

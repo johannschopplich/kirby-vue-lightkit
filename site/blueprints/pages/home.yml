@@ -1,0 +1,28 @@
+title:
+  de: Startseite
+  en: Home
+
+icon: 🏠
+
+options:
+  changeSlug: false
+  changeStatus: false
+  delete: false
+  duplicate: false
+
+tabs:
+  content:
+    label:
+      de: Inhalt
+      en: Content
+    icon: draft
+    columns:
+      - width: 2/3
+        sections:
+          text: sections/text
+
+      - width: 1/3
+        sections:
+          meta: sections/meta
+
+  images: tabs/images

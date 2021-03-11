@@ -1,0 +1,24 @@
+type: fields
+fields:
+  customTitle:
+    label:
+      de: Eigener Titel
+      en: Custom Title
+    type: text
+    icon: title
+  description:
+    label:
+      de: Beschreibung
+      en: Description
+    type: textarea
+    buttons: false
+    icon: text
+  thumbnail:
+    label:
+      de: Vorschaubild
+      en: Thumbnail
+    type: files
+    query: page.files.filterBy('template', 'image')
+    uploads: image
+    multiple: false
+    translate: false

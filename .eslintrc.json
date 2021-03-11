@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "plugin:jsdoc/recommended",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue",
+    "jsdoc"
+  ],
+  "rules": {
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 3,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": false
+      }
+    }],
+    "vue/no-v-html": "off",
+    "quote-props": ["error", "consistent-as-needed"]
+  },
+  "settings": {
+    "jsdoc": {
+      "mode": "typescript"
+    }
+  }
+}

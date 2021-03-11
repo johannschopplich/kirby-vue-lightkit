@@ -1,0 +1,13 @@
+{
+  "require": {
+    "php": ">=7.4.0",
+    "getkirby/cms": "^3.0",
+    "johannschopplich/kirby-extended": "^2.0"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "kirby-cms-path": false
+  }
+}

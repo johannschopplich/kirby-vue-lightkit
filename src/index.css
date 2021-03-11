@@ -1,0 +1,24 @@
+:root {
+  --color-primary: hsl(240, 100%, 46%);
+  --color-primary-hover: hsl(240, 100%, 54%);
+  --color-primary-active: hsl(240, 100%, 62%);
+  --color-primary-lucent: hsla(240, 100%, 46%, 0.35);
+
+  --radius: 0.5em;
+}
+
+html {
+  background-color: var(--color-primary);
+}
+
+#app {
+  padding: var(--space-xs);
+}
+
+#app > *:not(:last-child) {
+  margin-bottom: var(--space-xs);
+}
+
+.title {
+  font-weight: 700;
+}

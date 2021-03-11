@@ -1,0 +1,18 @@
+label:
+  de: Bilder
+  en: Images
+icon: image
+sections:
+  imagesTab:
+    type: files
+    headline:
+      de: Bilder
+      en: Images
+    template: image
+    empty:
+      de: Noch keine Bilder
+      en: No images yet
+    layout: cards
+    size: small
+    image:
+      cover: true

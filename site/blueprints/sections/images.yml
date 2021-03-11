@@ -1,0 +1,8 @@
+type: files
+headline:
+  de: Bilder
+  en: Images
+template: image
+empty:
+  de: Keine Bilder
+  en: No images

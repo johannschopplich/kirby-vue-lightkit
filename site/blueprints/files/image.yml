@@ -1,0 +1,30 @@
+title:
+  de: Bild
+  en: Image
+
+accept:
+  type: image
+
+columns:
+  - width: 1/2
+    sections:
+      caption:
+        type: fields
+        fields:
+          caption:
+            label:
+              de: Bildunterschrift
+              en: Caption
+            type: writer
+            inline: true
+
+  - width: 1/2
+    sections:
+      alt:
+        type: fields
+        fields:
+          alt:
+            label:
+              de: Alternativer Text
+              en: Alternative Text
+            type: text
