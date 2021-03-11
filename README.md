@@ -29,7 +29,7 @@ It's aimed to be as straightforward as possible, while keeping Kirby in the back
 
 Why not use Vue.js with [Kirby QL](https://github.com/getkirby/kql)? Well, for some projects I don't like the idea of an API user which has complete read access to the panel. I want to control, what a user can fetch from the project. Hence, [`controllers`](./site/controllers).
 
-Think of this lightkit as the little brother of my [Kirby + Vue.js Starterkit](https://github.com/johannschopplich/kirby-vue3-starterkit)
+Think of this lightkit as the little brother of my [Kirby + Vue.js Starterkit](https://github.com/johannschopplich/kirby-vue3-starterkit).
 
 ### File Based Routing
 
@@ -54,23 +54,26 @@ kirby-vue-lightkit/
 |   |   # Static images like icons
 |   ├── img/
 |   |
-|   |   # Kirby's media folder for thumbnails and more (content not tracked by Git)
+|   |   # Kirby's media folder for thumbnails and more (not tracked by Git)
 |   └── media/
 |
-|   # Kirby's core folder containing templates, blueprints, snippets etc. for Kirby
+|   # Kirby's core folder containing templates, blueprints, snippets etc.
 ├── site/
 |   ├── blueprints/
 |   ├── config/
 |   |
-|   |   # 
+|   |   # All are fetchable via the `usePage` hook
 |   ├── controllers/
+|   |   |
+|   |   |   # Acts as global site object similar to Kirby's `$site`
+|   |   └── default.php
 |   |
 |   ├── plugins/vite/
 |   |   |
 |   |   |   # Core of the Vite integration plugin, mainly registeres routes
 |   |   ├── index.php
 |   |   |
-|   |   |   # Routes to handle `.json` requests and serving the `index.php` snippet
+|   |   |   # Routes to handle controller requests
 |   |   └── routes.php
 |   |
 |   └── templates/
@@ -92,16 +95,15 @@ kirby-vue-lightkit/
 |   |   |   # Provides a object corresponding to Kirby's global `$site`
 |   |   └── useSite.js
 |   |
-|   |   # Vue.js views corresponding to Kirby templates
-|   |   # Routes are being automatically resolved
-|   └── views/
-|       |
-|       ├── App.vue
-|       ├── index.css
-|       ├── index.js
-|       └── serviceWorker.js
+|   |   # File based routing
+|   ├── pages/
+|   |
+|   ├── App.vue
+|   ├── index.css
+|   ├── index.js
+|   └── router.js
 |
-|   # Contains everything content and user data related (contents not tracked by Git)
+|   # Contains everything content and user data related (not tracked by Git)
 ├── storage/
 |   ├── accounts/
 |   ├── cache/
@@ -118,7 +120,7 @@ kirby-vue-lightkit/
 |   # Handles PHP dependencies
 ├── composer.json
 |
-|   # Handles NPM dependencies
+|   # Handles npm dependencies
 ├── package.json
 |
 |   # Router for the PHP built-in development server (used by `serveKirby.js`)
