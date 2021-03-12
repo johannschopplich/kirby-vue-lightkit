@@ -9,6 +9,8 @@
 
   <?php $meta = $page->meta() ?>
   <?= $meta->robots() ?>
+  <?= $meta->jsonld() ?>
+  <?= $meta->social() ?>
 
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 

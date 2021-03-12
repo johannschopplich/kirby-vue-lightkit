@@ -1,1 +1,13 @@
-Title: Kirby Vue Lightkit
+Title: Kirby + Vue.js Lightkit
+
+----
+
+Customtitle: Kirby + Vue.js Lightkit
+
+----
+
+Description: ⛺️ File based routing, SEO-friendly, Vue.js & Kirby. All you need.
+
+----
+
+Thumbnail: 
