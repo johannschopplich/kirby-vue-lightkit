@@ -9,7 +9,7 @@
         v-for="(item, index) in items"
         :key="index"
         class="todo-item"
-        @click="removeItem(item)"
+        @click="items.delete(item)"
       >
         {{ item }}
       </li>
@@ -39,36 +39,45 @@
 <script>
 import { reactive, ref } from 'vue'
 
+class PersistentSet extends Set {
+  constructor (key) {
+    super(JSON.parse(localStorage.getItem(key) || '[]'))
+    this.key = key
+  }
+
+  persist () {
+    if (this.key) {
+      localStorage.setItem(this.key, JSON.stringify([...this]))
+    }
+  }
+
+  add (...args) {
+    super.add(...args)
+    this.persist()
+    return this
+  }
+
+  delete (...args) {
+    super.delete(...args)
+    this.persist()
+    return this
+  }
+}
+
 export default {
   setup () {
     const text = ref('')
-    const items = reactive(
-      new Set(
-        JSON.parse(
-          localStorage.getItem('app.todo') || '[]'
-        )
-      )
-    )
-
-    items.save = () => localStorage.setItem('app.todo', JSON.stringify([...items]))
-
-    const removeItem = id => {
-      items.delete(id)
-      items.save()
-    }
+    const items = reactive(new PersistentSet('app.todo'))
 
     const onSubmit = () => {
       if (text.value.length === 0) return
-
       items.add(text.value)
-      items.save()
       text.value = ''
     }
 
     return {
       text,
       items,
-      removeItem,
       onSubmit
     }
   }
