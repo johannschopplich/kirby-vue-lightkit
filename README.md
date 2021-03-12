@@ -25,15 +25,46 @@
 
 When your project uses a *predefined* folder structure which doesn't require adjustability by the user, this kit is for you.
 
-It's aimed to be as straightforward as possible, while keeping Kirby in the background to deliver server-generated meta tags as well as backend-editing of content.
-
-Why not use Vue.js with [Kirby QL](https://github.com/getkirby/kql)? Well, for some projects I don't like the idea of an API user which has complete read access to the panel. I want to control, what a user can fetch from the project. Hence, [`controllers`](./site/controllers).
+It's aimed to be a straightforward Vue single-page application, while keeping Kirby in the background to deliver server-generated meta tags as well as backend-editing of content.
 
 Think of this lightkit as the little brother of my [Kirby + Vue.js Starterkit](https://github.com/johannschopplich/kirby-vue3-starterkit).
 
-### File Based Routing
+Why not use Vue.js with [Kirby QL](https://github.com/getkirby/kql)? Well, for some projects I don't like the idea of an API user which has complete read access to the panel. I want to control, what a user can fetch from the project. Hence, [`controllers`](./site/controllers).
 
-Created files in the [`src/pages`](./src/pages) directory correspond to the frontend's route structure. The Vue Router is automatically populated by generated routes using [Vite](https://vitejs.dev)'s [glob import](https://vitejs.dev/guide/features.html#glob-import).
+### 🗂 File Based Routing
+
+File components in the [`src/pages`](./src/pages) directory correspond to the frontend's route structure. The Vue Router is automatically populated by generated routes using [Vite](https://vitejs.dev)'s [glob import](https://vitejs.dev/guide/features.html#glob-import).
+
+**Basic Routing**
+
+Pages will automatically map files from the [`pages`](./src/pages) directory to a route with the same name:
+- `src/pages/todo.vue` -> `/todo`
+
+**Index Routes**
+
+Files named `index` are treated as the index page of a route:
+- `src/pages/index.vue` -> `/`
+
+**Dynamic Routes**
+
+Dynamic routes are denoted using square brackets. Both directories and pages can be dynamic:
+- `src/pages/article/[id].vue` -> `/article/:id` (`/article/kirby-rocks`)
+
+Dynamic parameters will be passed to the page as props.
+
+**Catch-all Routes**
+
+Not found routes are denoted with square brackets containing an ellipsis:
+- `src/pages/[...all].vue` -> `/*` (`/non-existent-page`)
+
+The text after the ellipsis will be used both to name the route, and as the name of the prop in which the route parameters are passed.
+
+### Controllers For Data
+
+- The [`site/controllers/default.php`](./site/controllers/default.php) controller returns data which is inlined in the index template and accessible with the `useSite()` hook.
+- Every other controller is fetchable via the `usePage()` hook. When fetched once from the network, it is then cached in store.
+
+> ℹ️ Note: Each controller has to return it's data nested inside the `data` key. Take a look into the examples provided to get an idea.
 
 ### Folder Structure
 
@@ -220,6 +251,10 @@ Vite will generate a hashed version of all assets, including images and fonts sa
 6. Some hosting environments require to uncomment `RewriteBase /` in [`.htaccess`](public/.htaccess) to make site links work.
 
 Now your project is hopefully up 'n' running!
+
+## Credits
+
+- Han（ハン） hannoeru for his [vite-pages](https://github.com/hannoeru/vite-pages) plugin
 
 ## License
 
