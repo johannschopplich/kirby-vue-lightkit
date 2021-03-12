@@ -32,11 +32,7 @@ return [
     [
         'pattern' => '(:all)',
         'action' => function ($pageId) {
-            // if (!empty($pageId)) {
-            //     return page($pageId);
-            // }
-
-            return site()->homePage();
+            return page($pageId) ?? site()->homePage();
         }
     ]
 ];
