@@ -5,6 +5,7 @@ return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site) {
 
     return [
         'data' => [
+            'title' => $home->title()->value(),
             'text' => $home->text()->toBlocks()->toHtml()
         ]
     ];

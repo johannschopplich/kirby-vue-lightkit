@@ -1,28 +1,28 @@
 import { shallowReactive, readonly } from 'vue'
-import { useRoute } from 'vue-router'
+
+/** @constant {Map} */
+const store = new Map()
 
 /**
- * Map to store pages in
+ * Retrieve data of a controller from either store or network
  *
- * @constant {Map}
- */
-const pages = new Map()
-
-/**
- * Retrieve data of a page by id from either store or network
- *
- * @param {string} id Page id to retrieve
- * @returns {object|false} The page's data or `false` if fetch request failed
+ * @param {string} id The controller id to retrieve
+ * @returns {object|false} The controller's data or `false` if fetch request failed
  */
 const getPage = async id => {
   let page
 
-  if (pages.has(id)) {
-    return pages.get(id)
+  if (store.has(id)) {
+    return store.get(id)
   }
 
   try {
     const response = await fetch(`/controllers/${id}.json`)
+
+    if (!response.ok) {
+      throw new Error(`The request failed with response error "${response.statusText}".`)
+    }
+
     const { data } = await response.json()
     page = data
   } catch (error) {
@@ -30,20 +30,21 @@ const getPage = async id => {
     return false
   }
 
-  pages.set(id, page)
+  store.set(id, page)
 
   return page
 }
 
 /**
- * Hook to get data for a given page id or the current route
+ * Hook to get data for a given controller
  *
- * @param {string} [path] Optional path or page id to retrieve
- * @returns {shallowReactive} Reactive page object
+ * @param {string} id The controller id to retrieve
+ * @returns {shallowReactive} Readonly reactive page object
  */
-export default path => {
-  const { path: currentPath } = useRoute()
-  const id = (path ?? currentPath).replace(/^\/|\/$/g, '') || 'home'
+export default id => {
+  if (!id) {
+    throw new Error('Missing id parameter.')
+  }
 
   // Setup page waiter promise
   let resolve

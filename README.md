@@ -59,10 +59,10 @@ Not found routes are denoted with square brackets containing an ellipsis:
 
 The text after the ellipsis will be used both to name the route, and as the name of the prop in which the route parameters are passed.
 
-### Controllers For Data
+### Controllers for Data
 
-- The [`site/controllers/default.php`](./site/controllers/default.php) controller returns data which is inlined in the index template and accessible with the `useSite()` hook.
-- Every other controller is fetchable via the `usePage()` hook. When fetched once from the network, it is then cached in store.
+- The [`site/controllers/default.php`](./site/controllers/default.php) controller returns data which is inlined in the index template and accessible with the `useSite()` hook. Use it for data required right after the Vue app is mounted (for the initial paint).
+- Every other controller is fetchable via the `useController()` hook. When fetched once from the network, it is then cached in store. Use it for optional data not required for the initial paint.
 
 > ℹ️ Note: Each controller has to return it's data nested inside the `data` key. Take a look into the examples provided to get an idea.
 
@@ -93,7 +93,7 @@ kirby-vue-lightkit/
 |   ├── blueprints/
 |   ├── config/
 |   |
-|   |   # All are fetchable via the `usePage` hook
+|   |   # Create data objects fetchable via the `useController()` hook
 |   ├── controllers/
 |   |   |
 |   |   |   # Acts as global site object similar to Kirby's `$site`
@@ -120,8 +120,8 @@ kirby-vue-lightkit/
 |   |   # Hooks for common actions
 |   ├── hooks/
 |   |   |
-|   |   |   # Fetch data of a controller, similarly to Kirby's `$page` object
-|   |   ├── usePage.js
+|   |   |   # Fetch data of a controller by id
+|   |   ├── useController.js
 |   |   |
 |   |   |   # Provides a object corresponding to Kirby's global `$site`
 |   |   └── useSite.js

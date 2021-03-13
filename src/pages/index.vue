@@ -12,15 +12,18 @@
 </template>
 
 <script>
-import { usePage } from '~/hooks'
+import { useController } from '~/hooks'
 
 export default {
   setup () {
-    const page = usePage()
+    // Pass the controller name as parameter
+    const page = useController('home')
 
     ;(async () => {
       await page.isReadyPromise()
-      console.log('Fetched data for homepage from network (first request only) or store.')
+      // Fetched data for homepage from network (first request only) or store
+      // You can access it now, for example:
+      console.log(page.title)
     })()
 
     return { page }
