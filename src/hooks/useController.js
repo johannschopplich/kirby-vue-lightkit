@@ -1,6 +1,5 @@
 import { shallowReactive, readonly } from 'vue'
 
-/** @constant {Map} */
 const store = new Map()
 
 /**
