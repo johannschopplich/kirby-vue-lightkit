@@ -6,9 +6,9 @@ const store = new Map()
  * Retrieve data of a controller from either store or network
  *
  * @param {string} id The controller id to retrieve
- * @returns {object|false} The controller's data or `false` if fetch request failed
+ * @returns {(object|false)} The controller's data or `false` if fetch request failed
  */
-const getPage = async id => {
+const getController = async id => {
   let page
 
   if (store.has(id)) {
@@ -41,9 +41,7 @@ const getPage = async id => {
  * @returns {shallowReactive} Readonly reactive page object
  */
 export default id => {
-  if (!id) {
-    throw new Error('Missing id parameter.')
-  }
+  if (!id) throw new Error('Missing argument (id).')
 
   // Setup page waiter promise
   let resolve
@@ -57,7 +55,7 @@ export default id => {
   })
 
   ;(async () => {
-    const data = await getPage(id)
+    const data = await getController(id)
 
     if (!data) {
       page.__status = 'error'

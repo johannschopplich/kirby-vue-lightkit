@@ -7,7 +7,7 @@ const data = JSON.parse(
 /**
  * Reactive object for the global data
  *
- * @constant {object}
+ * @type {object}
  */
 const site = reactive(data)
 

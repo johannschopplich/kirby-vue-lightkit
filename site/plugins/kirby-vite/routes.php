@@ -25,8 +25,7 @@ return [
                 return Response::json(['error' => 'Not Found'], 404);
             }
 
-            $arguments = compact('kirby', 'site');
-            $data = $controller->call(null, $arguments);
+            $data = $controller->call(null, compact('kirby', 'site'));
 
             if ($cacheActive) {
                 $cacheBucket->set($cacheKey, $data);
