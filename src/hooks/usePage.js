@@ -1,4 +1,4 @@
-import { shallowReactive } from 'vue'
+import { shallowReactive, readonly } from 'vue'
 import { useRoute } from 'vue-router'
 
 /**
@@ -73,5 +73,5 @@ export default path => {
     resolve && resolve()
   })()
 
-  return page
+  return readonly(page)
 }
