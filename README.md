@@ -61,8 +61,8 @@ The text after the ellipsis will be used both to name the route, and as the name
 
 ### Controllers for Data
 
-- The [`site/controllers/default.php`](./site/controllers/default.php) controller returns data which is inlined in the index template and accessible with the `useSite()` hook. Use it for data required right after the Vue app is mounted (for the initial paint).
-- Every other controller is fetchable via the `useController()` hook. When fetched once from the network, it is then cached in store. Use it for optional data not required for the initial paint.
+- The [`site/controllers/default.php`](./site/controllers/default.php) controller returns data which is embedded in the index template and available with the `useSite()` hook. Use it for data required for the first screen that's displayed to avoid a extra roundtrip.
+- Every other controller can be called via the `useController()` hook. When fetched once from the network, it is then cached in store. Use it for data not required for the initial paint of your web application.
 
 > ℹ️ Note: Each controller has to return it's data nested inside the `data` key. Take a look into the examples provided to get an idea.
 
