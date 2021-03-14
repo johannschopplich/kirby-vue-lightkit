@@ -2,7 +2,7 @@
   <Header />
 
   <main id="main">
-    <div class="box container is-md" data-theme="light">
+    <div class="box container is-md is-fullwidth" data-theme="light">
       <router-view :key="route.path" />
     </div>
   </main>

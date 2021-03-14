@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="box container is-md" data-theme="light">
+    <div class="box container is-md is-fullwidth" data-theme="light">
       <p class="title text-4">
         {{ site.title }}
       </p>
@@ -48,6 +48,7 @@ header {
   top: var(--space-xs);
   left: 0;
   width: 100%;
+  z-index: 5;
 }
 
 header .title {

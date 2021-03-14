@@ -5,9 +5,9 @@
   <hr>
 
   <div
-    v-if="page.isReady"
+    v-if="home.isReady"
     class="content"
-    v-html="page.text"
+    v-html="home.text"
   />
 </template>
 
@@ -17,16 +17,16 @@ import { useController } from '~/hooks'
 export default {
   setup () {
     // Pass the controller name as parameter
-    const page = useController('home')
+    const home = useController('home')
 
     ;(async () => {
-      await page.isReadyPromise()
+      await home.isReadyPromise()
       // Fetched data for homepage from network (first request only) or store
       // You can access it now, for example:
-      console.log(page.title)
+      console.log(home.title)
     })()
 
-    return { page }
+    return { home }
   }
 }
 </script>

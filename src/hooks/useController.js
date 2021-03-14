@@ -20,7 +20,7 @@ const getController = async id => {
     const response = await fetch(url)
 
     if (!response.ok) {
-      throw new Error(`Request ${url} failed with ${response.statusText}.`)
+      throw new Error(`Request ${url} failed with "${response.statusText}".`)
     }
 
     const { data } = await response.json()
