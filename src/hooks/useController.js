@@ -3,9 +3,9 @@ import { shallowReactive, readonly } from 'vue'
 const store = new Map()
 
 /**
- * Retrieve data of a controller from either store or network
+ * Returns controller data from either store or network
  *
- * @param {string} id The controller id to retrieve
+ * @param {string} id The controller to retrieve
  * @returns {(object|false)} The controller's data or `false` if fetch request failed
  */
 const getController = async id => {
@@ -20,7 +20,7 @@ const getController = async id => {
     const response = await fetch(url)
 
     if (!response.ok) {
-      throw new Error(`Request ${url} failed with "${response.statusText}".`)
+      throw new Error(`Request ${url} failed with ${response.statusText}.`)
     }
 
     const { data } = await response.json()
@@ -36,7 +36,7 @@ const getController = async id => {
 }
 
 /**
- * Hook to get data for a given controller
+ * Gets data for a given controller
  *
  * @param {string} id The controller id to retrieve
  * @returns {shallowReactive} Readonly reactive page object

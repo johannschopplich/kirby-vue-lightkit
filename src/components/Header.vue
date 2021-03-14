@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="box" data-theme="light">
+    <div class="box container is-md" data-theme="light">
       <p class="title text-4">
         {{ site.title }}
       </p>
@@ -30,7 +30,7 @@ export default {
     const links = [
       { path: '/', name: 'Home' },
       { path: '/todo', name: 'Todo' },
-      { path: '/article/kirby-rocks', name: 'Subpage' },
+      { path: '/nested/kirby-rocks', name: 'Subpage' },
       { path: '/not-found', name: '404' }
     ]
 

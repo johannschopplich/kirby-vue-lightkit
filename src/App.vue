@@ -2,10 +2,8 @@
   <Header />
 
   <main id="main">
-    <div class="box" data-theme="light">
-      <div class="container is-md is-decentered">
-        <router-view :key="route.path" />
-      </div>
+    <div class="box container is-md" data-theme="light">
+      <router-view :key="route.path" />
     </div>
   </main>
 </template>
@@ -25,9 +23,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.container {
-  padding: 0;
-}
-</style>

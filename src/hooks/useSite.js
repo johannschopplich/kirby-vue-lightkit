@@ -4,16 +4,11 @@ const data = JSON.parse(
   document.getElementById('data-site').textContent
 )
 
-/**
- * Reactive object for the global data
- *
- * @type {object}
- */
 const site = reactive(data)
 
 /**
- * Hook for the global `site` object
+ * Gets the global site object
  *
- * @returns {object} Readonly `site` state
+ * @returns {object} Readonly site object
  */
 export default () => readonly(site)

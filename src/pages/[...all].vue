@@ -2,7 +2,10 @@
   <h1 class="title text-4">
     Not Found
   </h1>
-  <p>Requested path: <code>{{ route.path }}</code></p>
+
+  <p>
+    Requested path: <code>{{ route.path }}</code>
+  </p>
 </template>
 
 <script>

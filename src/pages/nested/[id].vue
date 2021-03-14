@@ -7,7 +7,9 @@
     Requested path: <code>{{ route.path }}</code>
   </p>
 
-  <p>All children pages of <code>/article/</code> will be rendered by this component.</p>
+  <p>
+    All children pages of <code>/nested/</code> will be rendered by this component.
+  </p>
 </template>
 
 <script>
