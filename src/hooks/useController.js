@@ -10,16 +10,17 @@ const store = new Map()
  */
 const getController = async id => {
   let page
+  const url = `/controllers/${id}.json`
 
   if (store.has(id)) {
     return store.get(id)
   }
 
   try {
-    const response = await fetch(`/controllers/${id}.json`)
+    const response = await fetch(url)
 
     if (!response.ok) {
-      throw new Error(`The request failed with response error "${response.statusText}".`)
+      throw new Error(`Request ${url} failed with "${response.statusText}".`)
     }
 
     const { data } = await response.json()
@@ -59,7 +60,6 @@ export default id => {
 
     if (!data) {
       page.__status = 'error'
-      console.error('Couldn\'t fetch data for:', id)
       return
     }
 
