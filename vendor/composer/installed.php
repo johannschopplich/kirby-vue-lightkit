@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0b2731f1fdb6fa4f38ad96f38acdea70122061ab',
+    'reference' => '63d754ae3b46f7dcc698a1dc0933a1f984ea7fe2',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0b2731f1fdb6fa4f38ad96f38acdea70122061ab',
+      'reference' => '63d754ae3b46f7dcc698a1dc0933a1f984ea7fe2',
     ),
     'claviska/simpleimage' => 
     array (
@@ -67,12 +67,12 @@
     ),
     'johannschopplich/kirby-extended' => 
     array (
-      'pretty_version' => 'v2.9.1',
-      'version' => '2.9.1.0',
+      'pretty_version' => 'v2.9.2',
+      'version' => '2.9.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0d07f10e8cc254d13259c4b45d31f8ccbd856317',
+      'reference' => '4beab953f7ff276b7d0cb592b3634136788cb5f0',
     ),
     'laminas/laminas-escaper' => 
     array (
