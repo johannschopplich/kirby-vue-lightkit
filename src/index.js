@@ -1,5 +1,3 @@
-import 'vite/dynamic-import-polyfill'
-
 import './assets/buldy.css'
 import './index.css'
 
