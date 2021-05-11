@@ -1,51 +1,51 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '0b2731f1fdb6fa4f38ad96f38acdea70122061ab',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '0b2731f1fdb6fa4f38ad96f38acdea70122061ab',
     ),
     'claviska/simpleimage' => 
     array (
-      'pretty_version' => '3.5.1',
-      'version' => '3.5.1.0',
+      'pretty_version' => '3.6.3',
+      'version' => '3.6.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'ab2ab8a4672738ab77b39b00922ee4e79aeadb11',
+      'reference' => '21b6f4bf4ef1927158b3e29bd0c2d99c6681c750',
     ),
     'filp/whoops' => 
     array (
-      'pretty_version' => '2.9.1',
-      'version' => '2.9.1.0',
+      'pretty_version' => '2.12.1',
+      'version' => '2.12.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '307fb34a5ab697461ec4c9db865b20ff2fd40771',
+      'reference' => 'c13c0be93cff50f88bbd70827d993026821914dd',
     ),
     'getkirby/cms' => 
     array (
-      'pretty_version' => '3.5.3.1',
-      'version' => '3.5.3.1',
+      'pretty_version' => '3.5.5',
+      'version' => '3.5.5.0',
       'aliases' => 
       array (
       ),
-      'reference' => '38afb2d650f3764d23d732b23ae8f04ab9ffba69',
+      'reference' => 'efe24a6ef4ad61010428b1cb725f8f97a633ff82',
     ),
     'getkirby/composer-installer' => 
     array (
@@ -67,12 +67,12 @@
     ),
     'johannschopplich/kirby-extended' => 
     array (
-      'pretty_version' => 'v2.7.6',
-      'version' => '2.7.6.0',
+      'pretty_version' => 'v2.9.1',
+      'version' => '2.9.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a1f9a0d6c4e9c02dc12c9ff8fd70d4a88965278f',
+      'reference' => '0d07f10e8cc254d13259c4b45d31f8ccbd856317',
     ),
     'laminas/laminas-escaper' => 
     array (
@@ -128,12 +128,12 @@
     ),
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.2.0',
-      'version' => '6.2.0.0',
+      'pretty_version' => 'v6.4.1',
+      'version' => '6.4.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e38888a75c070304ca5514197d4847a59a5c853f',
+      'reference' => '9256f12d8fb0cd0500f93b19e18c356906cbed3d',
     ),
     'phpoption/phpoption' => 
     array (
@@ -146,21 +146,12 @@
     ),
     'psr/log' => 
     array (
-      'pretty_version' => '1.1.3',
-      'version' => '1.1.3.0',
+      'pretty_version' => '1.1.4',
+      'version' => '1.1.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
-    ),
-    'symfony/css-selector' => 
-    array (
-      'pretty_version' => 'v5.2.4',
-      'version' => '5.2.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'f65f217b3314504a1ec99c2d6ef69016bb13490f',
+      'reference' => 'd49695b909c3b7628b6289db5479a1c204601f11',
     ),
     'symfony/polyfill-ctype' => 
     array (
@@ -206,24 +197,6 @@
       array (
       ),
       'reference' => 'b3eac5c7ac896e52deab4a99068e3f4ab12d9e56',
-    ),
-    'voku/html-min' => 
-    array (
-      'pretty_version' => '4.4.8',
-      'version' => '4.4.8.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '4f700584abd70b308b7d06b8e4cfcc31711faaf9',
-    ),
-    'voku/simple_html_dom' => 
-    array (
-      'pretty_version' => '4.7.28',
-      'version' => '4.7.28.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '78d5894c7f0facfb4fb6369af15b1a87baea958c',
     ),
     'zendframework/zend-escaper' => 
     array (
