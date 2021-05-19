@@ -266,7 +266,7 @@ button:focus:not(:focus-visible) {
   --space-xxxl: 8.5rem;
   --component-spacer: var(--space-m);
   --radius: 0.25em;
-  --content-width: 65ch;
+  --content-width: 60ch;
 }
 
 :root:not([data-theme]),
