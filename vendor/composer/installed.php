@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '06af31ae0fbb417e44c94640413b3692be50f413',
+        'reference' => '44f5a4c1ffb60a9b8f1801da669e4c97bb591599',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '06af31ae0fbb417e44c94640413b3692be50f413',
+            'reference' => '44f5a4c1ffb60a9b8f1801da669e4c97bb591599',
             'dev_requirement' => false,
         ),
         'claviska/simpleimage' => array(
@@ -38,12 +38,12 @@
             'dev_requirement' => false,
         ),
         'getkirby/cms' => array(
-            'pretty_version' => '3.5.7',
-            'version' => '3.5.7.0',
+            'pretty_version' => '3.5.7.1',
+            'version' => '3.5.7.1',
             'type' => 'kirby-cms',
             'install_path' => __DIR__ . '/../getkirby/cms',
             'aliases' => array(),
-            'reference' => '33953892b1b67983caf1b3bd10ed56dd1616cace',
+            'reference' => 'c77ccb82944b5fa0e3a453b4e203bd697e96330d',
             'dev_requirement' => false,
         ),
         'getkirby/composer-installer' => array(
