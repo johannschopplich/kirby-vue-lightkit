@@ -1,7 +1,5 @@
 <template>
-  <h1 class="title text-4">
-    Not Found
-  </h1>
+  <h1 class="title text-4">Not Found</h1>
 
   <p>
     Requested path: <code>{{ route.path }}</code>
@@ -9,21 +7,21 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router'
+import { useRoute } from "vue-router";
 
 export default {
   props: {
     all: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
 
-  setup () {
-    const route = useRoute()
+  setup() {
+    const route = useRoute();
     return {
-      route
-    }
-  }
-}
+      route,
+    };
+  },
+};
 </script>

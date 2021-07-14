@@ -1,7 +1,5 @@
 <template>
-  <h1 class="title text-4 mb-m">
-    Todo List
-  </h1>
+  <h1 class="title text-4 mb-m">Todo List</h1>
 
   <div class="content mb-m">
     <ul>
@@ -17,9 +15,7 @@
   </div>
 
   <form @submit.prevent="onSubmit">
-    <label for="new-todo" class="label">
-      What needs to be done?
-    </label>
+    <label for="new-todo" class="label"> What needs to be done? </label>
 
     <div class="form-input">
       <input
@@ -27,61 +23,59 @@
         class="control"
         :value="text"
         @change="text = $event.target.value"
-      >
+      />
 
-      <button class="button is-primary is-outlined px-m">
-        Add item
-      </button>
+      <button class="button is-primary is-outlined px-m">Add item</button>
     </div>
   </form>
 </template>
 
 <script>
-import { reactive, ref } from 'vue'
+import { reactive, ref } from "vue";
 
 class PersistentSet extends Set {
-  constructor (key) {
-    super(JSON.parse(localStorage.getItem(key) || '[]'))
-    this.key = key
+  constructor(key) {
+    super(JSON.parse(localStorage.getItem(key) || "[]"));
+    this.key = key;
   }
 
-  persist () {
+  persist() {
     if (this.key) {
-      localStorage.setItem(this.key, JSON.stringify([...this]))
+      localStorage.setItem(this.key, JSON.stringify([...this]));
     }
   }
 
-  add (...args) {
-    super.add(...args)
-    this.persist()
-    return this
+  add(...args) {
+    super.add(...args);
+    this.persist();
+    return this;
   }
 
-  delete (...args) {
-    super.delete(...args)
-    this.persist()
-    return this
+  delete(...args) {
+    super.delete(...args);
+    this.persist();
+    return this;
   }
 }
 
 export default {
-  setup () {
-    const text = ref('')
-    const items = reactive(new PersistentSet('app.todo'))
+  setup() {
+    const text = ref("");
+    const items = reactive(new PersistentSet("app.todo"));
 
     const onSubmit = () => {
-      if (text.value.length === 0) return
-      items.add(text.value)
-      text.value = ''
-    }
+      if (text.value.length === 0) return;
+      items.add(text.value);
+      text.value = "";
+    };
 
     return {
       text,
       items,
-      onSubmit
-    }
-  }
-}
+      onSubmit,
+    };
+  },
+};
 </script>
 
 <style scoped>

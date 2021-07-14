@@ -9,17 +9,17 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router'
-import Header from '~/components/Header.vue'
+import { useRoute } from "vue-router";
+import Header from "~/components/Header.vue";
 
 export default {
   components: {
-    Header
+    Header,
   },
 
-  setup () {
-    const route = useRoute()
-    return { route }
-  }
-}
+  setup() {
+    const route = useRoute();
+    return { route };
+  },
+};
 </script>

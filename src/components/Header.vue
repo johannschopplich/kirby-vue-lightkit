@@ -7,10 +7,7 @@
 
       <nav>
         <ul class="d-flex h-stacked">
-          <li
-            v-for="(link, index) in links"
-            :key="index"
-          >
+          <li v-for="(link, index) in links" :key="index">
             <router-link :to="link.path">
               {{ link.name }}
             </router-link>
@@ -22,24 +19,24 @@
 </template>
 
 <script>
-import { useSite } from '~/hooks'
+import { useSite } from "~/hooks";
 
 export default {
-  setup () {
-    const site = useSite()
+  setup() {
+    const site = useSite();
     const links = [
-      { path: '/', name: 'Home' },
-      { path: '/todo', name: 'Todo' },
-      { path: '/nested/kirby-rocks', name: 'Subpage' },
-      { path: '/not-found', name: '404' }
-    ]
+      { path: "/", name: "Home" },
+      { path: "/todo", name: "Todo" },
+      { path: "/nested/kirby-rocks", name: "Subpage" },
+      { path: "/not-found", name: "404" },
+    ];
 
     return {
       site,
-      links
-    }
-  }
-}
+      links,
+    };
+  },
+};
 </script>
 
 <style scoped>
