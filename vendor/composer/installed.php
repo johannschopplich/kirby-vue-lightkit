@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '740266fab8367eb81c7923f23863320835b86b9e',
+        'reference' => '96636b566225d02025e3993f8b3476ca63bbe38d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '740266fab8367eb81c7923f23863320835b86b9e',
+            'reference' => '96636b566225d02025e3993f8b3476ca63bbe38d',
             'dev_requirement' => false,
         ),
         'claviska/simpleimage' => array(
@@ -83,12 +83,12 @@
             'dev_requirement' => false,
         ),
         'laminas/laminas-zendframework-bridge' => array(
-            'pretty_version' => '1.3.0',
-            'version' => '1.3.0.0',
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laminas/laminas-zendframework-bridge',
             'aliases' => array(),
-            'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
+            'reference' => 'bf180a382393e7db5c1e8d0f2ec0c4af9c724baf',
             'dev_requirement' => false,
         ),
         'league/color-extractor' => array(
