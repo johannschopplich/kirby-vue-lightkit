@@ -3,23 +3,25 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import Vue from "@vitejs/plugin-vue";
 
+const root = "src";
+
 export default ({ mode }) =>
   defineConfig({
-    root: "src",
+    root,
     base: mode === "development" ? "/" : "/dist/",
+
+    resolve: {
+      alias: {
+        "~/": `${resolve(__dirname, root)}/`,
+      },
+    },
 
     build: {
       outDir: resolve(__dirname, "public/dist"),
       emptyOutDir: true,
       manifest: true,
       rollupOptions: {
-        input: "/index.js",
-      },
-    },
-
-    resolve: {
-      alias: {
-        "~/": `${resolve(__dirname, "src")}/`,
+        input: resolve(root, "index.js"),
       },
     },
 
