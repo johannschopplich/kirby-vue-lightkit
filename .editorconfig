@@ -11,8 +11,5 @@ insert_final_newline = true
 [*.php]
 indent_size = 4
 
-[site/templates/**.php]
-indent_size = 2
-
-[site/snippets/**.php]
+[site/{snippets,templates}/**.php]
 indent_size = 2
