@@ -12,19 +12,23 @@ class Vite
     protected static array $manifest;
 
     /**
-     * Checks for `.lock` file in `/src` as indicator for development mode
+     * Checks for development mode by either `KIRBY_MODE` env var or
+     * if a `.lock` file in `/src` exists
      *
      * @return bool
      */
     protected function isDev(): bool
     {
-        $lockFile = kirby()->root('base') . '/src/.lock';
+        if (env('KIRBY_MODE') === 'development') {
+            return true;
+        }
 
+        $lockFile = kirby()->root('base') . '/src/.lock';
         return F::exists($lockFile);
     }
 
     /**
-     * Read and parse manifest file created by Vite
+     * Reads and parses the manifest file created by Vite
      *
      * @return array|null
      * @throws Exception
@@ -80,7 +84,7 @@ class Vite
     }
 
     /**
-     * Gets the URL for the specified file for development mode
+     * Gets the URL for the specified file in development mode
      *
      * @param string $file
      * @return string
@@ -91,7 +95,7 @@ class Vite
     }
 
     /**
-     * Gets the URL for the specified file for production mode
+     * Gets the URL for the specified file in production mode
      *
      * @param string $file
      * @return string

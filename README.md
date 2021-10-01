@@ -23,7 +23,7 @@
 
 > [Or jump right to the setup](#setup).
 
-When your project uses a *predefined* folder structure which doesn't require adjustability by the user, this kit is for you.
+When your project uses a _predefined_ folder structure which doesn't require adjustability by the user, this kit is for you.
 
 It's aimed to be a straightforward Vue single-page application, while keeping Kirby in the background to deliver server-generated meta tags as well as backend-editing of content.
 
@@ -35,26 +35,30 @@ Why not use Vue.js with [Kirby QL](https://github.com/getkirby/kql)? Well, for s
 
 File components in the [`src/pages`](./src/pages) directory correspond to the frontend's route structure. The Vue Router is automatically populated by generated routes using [Vite](https://vitejs.dev)'s [glob import](https://vitejs.dev/guide/features.html#glob-import).
 
-**Basic Routing**
+#### Basic Routing
 
 Pages will automatically map files from the [`pages`](./src/pages) directory to a route with the same name:
+
 - `src/pages/todo.vue` -> `/todo`
 
-**Index Routes**
+#### Index Routes
 
 Files named `index` are treated as the index page of a route:
+
 - `src/pages/index.vue` -> `/`
 
-**Dynamic Routes**
+#### Dynamic Routes
 
 Dynamic routes are denoted using square brackets. Both directories and pages can be dynamic:
+
 - `src/pages/article/[id].vue` -> `/article/:id` (`/article/kirby-rocks`)
 
 Dynamic parameters will be passed to the page as props.
 
-**Catch-all Routes**
+#### Catch-all Routes
 
 Not found routes are denoted with square brackets containing an ellipsis:
+
 - `src/pages/[...all].vue` -> `/*` (`/non-existent-page`)
 
 The text after the ellipsis will be used both to name the route, and as the name of the prop in which the route parameters are passed.
@@ -182,7 +186,7 @@ Update dependencies with:
 composer update
 ```
 
-### Node dependencies
+### Node Dependencies
 
 Install npm dependencies:
 
@@ -190,7 +194,7 @@ Install npm dependencies:
 npm install
 ```
 
-### Environment variables
+### Environment Variables
 
 Duplicate the [`.env.example`](.env.example) as `.env`::
 
@@ -200,9 +204,9 @@ cp .env.example .env
 
 Optionally, adapt it's values.
 
-### Static assets
+### Static Assets
 
-*During development* Kirby can't access static files located in the `src` folder. Therefore it's necessary to create a symbolic link inside of the public folder:
+_During development_ Kirby can't access static files located in the `src` folder. Therefore it's necessary to create a symbolic link inside of the public folder:
 
 ```bash
 ln -s $PWD/src/assets ./public/assets
@@ -210,12 +214,18 @@ ln -s $PWD/src/assets ./public/assets
 
 ## Usage
 
+### Build Mode
+
+During development a `.lock` file will be generated inside the `src` directory to let the backend now it runs in development mode. This file is deleted when running the build command.
+
+> ℹ️ Alternatively, you can set a `KIRBY_MODE` env variable containing either `development` or `production` to set the app mode programmatically and overwrite the `.lock` file mechanism. This may ease setups with Docker.
+
 ### Development
 
 You can start the development process with:
 
 ```bash
-# Runs `npm run kirby` parallel to `vite`
+# Runs `npm run kirby` in parallel to `vite`
 npm run dev
 ```
 
@@ -226,8 +236,6 @@ Afterwards, visit the app in your browser: [`http://127.0.0.1:8080`](http://127.
 Vite is used in combination with [backend integration](https://vitejs.dev/guide/backend-integration.html) and only serves frontend assets, not the whole app. Thus, `http://localhost:3000` won't be accessible.
 
 The backend is served by the PHP built-in web server on `http://127.0.0.1:8080` by default, but you can adapt the location in your `.env` file.
-
-> During development a `.lock` file will be generated inside the `src` folder to let the backend now which mode the app runs in: development or production. This file is deletetd when running the build command.
 
 ### Production
 
