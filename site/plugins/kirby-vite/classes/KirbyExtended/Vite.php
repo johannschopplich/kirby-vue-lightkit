@@ -91,7 +91,7 @@ class Vite
      */
     protected function assetDev(string $file): string
     {
-        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . "/$file";
+        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . "/{$file}";
     }
 
     /**
@@ -102,7 +102,7 @@ class Vite
      */
     protected function assetProd(string $file): string
     {
-        return kirby()->url('index') . '/' . option('kirby-extended.vite.outDir', 'dist') . "/$file";
+        return kirby()->url('index') . '/' . option('kirby-extended.vite.outDir', 'dist') . "/{$file}";
     }
 
     /**
