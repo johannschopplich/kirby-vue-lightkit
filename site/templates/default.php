@@ -14,8 +14,8 @@
 
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 
-  <?= vite()->client() ?>
   <?= vite()->css() ?>
+  <?= vite()->js() ?>
 
 </head>
 <body>
@@ -24,8 +24,6 @@
   <script id="data-site" type="application/json">
     <?= \Kirby\Data\Json::encode($data) ?>
   </script>
-
-  <?= vite()->js() ?>
 
 </body>
 </html>
