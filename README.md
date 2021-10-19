@@ -15,7 +15,9 @@
 
 ### Key Features
 
-- ⚡️ [Vue 3](https://github.com/vuejs/vue-next) & [Vite 2](https://vitejs.dev)
+- ⚡️ [Vue 3](https://github.com/vuejs/vue-next) & [Vite](https://vitejs.dev)
+- 🎢 [On-demand components auto importing](./src/components/)
+- 🍁 [Nuxt-inspired module system](./src/modules/)
 - 🗂 [File based routing](./src/pages) like Nuxt.js
 - 🔍 SEO-friendly: server-side generated meta tags
 
@@ -92,7 +94,7 @@ kirby-vue-lightkit/
 |   |   # Kirby's media folder for thumbnails and more (not tracked by Git)
 |   └── media/
 |
-|   # Kirby's core folder containing templates, blueprints, snippets etc.
+|   # Kirby's core folder containing templates, blueprints, etc.
 ├── site/
 |   ├── blueprints/
 |   ├── config/
@@ -103,9 +105,9 @@ kirby-vue-lightkit/
 |   |   |   # Acts as global site object similar to Kirby's `$site`
 |   |   └── default.php
 |   |
-|   ├── plugins/vite/
+|   ├── plugins/kirby-vite/
 |   |   |
-|   |   |   # Core of the Vite integration plugin, mainly registeres routes
+|   |   |   # Core of the Vite integration plugin, mainly registers routes
 |   |   ├── index.php
 |   |   |
 |   |   |   # Routes to handle controller requests
@@ -119,6 +121,7 @@ kirby-vue-lightkit/
 |   # Includes all frontend-related sources
 ├── src/
 |   |
+|   |   # All components will be auto imported on-demand
 |   ├── components/
 |   |
 |   |   # Hooks for common actions
@@ -152,13 +155,7 @@ kirby-vue-lightkit/
 |   # Environment variables for both Kirby and Vite (to be duplicated as `.env`)
 ├── .env.example
 |
-|   # Handles PHP dependencies
-├── composer.json
-|
-|   # Handles npm dependencies
-├── package.json
-|
-|   # Router for the PHP built-in development server (used by `serveKirby.js`)
+|   # Router for the PHP built-in development server
 ├── server.php
 |
 |   # Configuration file for Vite

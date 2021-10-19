@@ -1,6 +1,7 @@
 /* eslint-env node */
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import Components from "unplugin-vue-components/vite";
 import Vue from "@vitejs/plugin-vue";
 
 const root = "src";
@@ -24,7 +25,13 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  plugins: [Vue()],
+  plugins: [
+    Vue(),
+
+    Components({
+      dirs: ["components"],
+    }),
+  ],
 
   server: {
     cors: true,

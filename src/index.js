@@ -2,7 +2,12 @@ import "./assets/buldy.css";
 import "./index.css";
 
 import { createApp } from "vue";
-import router from "./router";
 import App from "./App.vue";
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+for (const m of Object.values(import.meta.globEager("./modules/*.js"))) {
+  m.install?.(app);
+}
+
+app.mount("#app");
