@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import Components from "unplugin-vue-components/vite";
 import Vue from "@vitejs/plugin-vue";
+import Pages from "vite-plugin-pages";
 
 const root = "src";
 
@@ -31,6 +32,10 @@ export default defineConfig(({ mode }) => ({
     Components({
       dirs: ["components"],
     }),
+
+    Pages({
+      pagesDir: "pages",
+    }),
   ],
 
   server: {
@@ -40,6 +45,6 @@ export default defineConfig(({ mode }) => ({
   },
 
   optimizeDeps: {
-    include: ["vue", "vue-router", "vite-pages"],
+    include: ["vue", "vue-router"],
   },
 }));
