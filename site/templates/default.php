@@ -15,7 +15,6 @@
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 
   <?= vite()->css() ?>
-  <?= vite()->js() ?>
 
   <script>
     ;(() => {
@@ -32,6 +31,8 @@
 
   <div id="app"></div>
   <script id="data-site" type="application/json"><?= \Kirby\Data\Json::encode($data) ?></script>
+
+  <?= vite()->js() ?>
 
 </body>
 </html>
