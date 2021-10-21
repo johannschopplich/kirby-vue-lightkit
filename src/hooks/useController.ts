@@ -47,7 +47,8 @@ export default (id: string): ControllerData => {
   if (!id) throw new Error("Missing argument (id).");
 
   // Setup page waiter promise
-  let resolve;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  let resolve: (value?: unknown) => void = () => {};
   const promise = new Promise((r) => {
     resolve = r;
   });
@@ -72,7 +73,6 @@ export default (id: string): ControllerData => {
 
     page.__status = "resolved";
     page.isReady = true;
-    // @ts-expect-error: Resolve is defined
     resolve?.();
   })();
 
