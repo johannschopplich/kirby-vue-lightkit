@@ -1,14 +1,19 @@
 import { shallowReactive, readonly } from "vue";
 
-const store = new Map();
+export interface ControllerData {
+  readonly __status: string;
+  readonly isReady: boolean;
+  readonly isReadyPromise: () => Promise<unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  readonly [key: string]: any;
+}
+
+const store = new Map<string, ControllerData>();
 
 /**
  * Returns controller data from either store or network
- *
- * @param {string} id The controller to retrieve
- * @returns {(object|false)} The controller's data or `false` if fetch request failed
  */
-const getController = async (id) => {
+const getController = async (id: string) => {
   let page;
   const url = `/controllers/${id}.json`;
 
@@ -36,12 +41,9 @@ const getController = async (id) => {
 };
 
 /**
- * Gets data for a given controller
- *
- * @param {string} id The controller id to retrieve
- * @returns {shallowReactive} Readonly reactive page object
+ * Returns data for a given controller
  */
-export default (id) => {
+export default (id: string): ControllerData => {
   if (!id) throw new Error("Missing argument (id).");
 
   // Setup page waiter promise
@@ -70,7 +72,8 @@ export default (id) => {
 
     page.__status = "resolved";
     page.isReady = true;
-    resolve && resolve();
+    // @ts-expect-error: Resolve is defined
+    resolve?.();
   })();
 
   return readonly(page);

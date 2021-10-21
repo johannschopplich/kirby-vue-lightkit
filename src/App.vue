@@ -1,20 +1,10 @@
 <template>
-  <Header />
-
-  <main id="main">
-    <div class="box container is-md is-fullwidth" data-theme="light">
-      <router-view :key="route.path" />
-    </div>
+  <main class="mx-auto max-w-screen-md py-4 px-4">
+    <router-view :key="route.path" />
   </main>
 </template>
 
-<script>
+<script setup lang="ts">
 import { useRoute } from "vue-router";
-
-export default {
-  setup() {
-    const route = useRoute();
-    return { route };
-  },
-};
+const route = useRoute();
 </script>

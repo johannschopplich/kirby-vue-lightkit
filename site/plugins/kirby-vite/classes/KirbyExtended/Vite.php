@@ -91,7 +91,7 @@ class Vite
      */
     protected function assetDev(string $file): string
     {
-        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . "/{$file}";
+        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . '/' . "{$file}";
     }
 
     /**
@@ -102,7 +102,7 @@ class Vite
      */
     protected function assetProd(string $file): string
     {
-        return '/' . option('kirby-extended.vite.outDir', 'dist') . "/{$file}";
+        return '/' . option('kirby-extended.vite.outDir', 'dist') . '/' . "{$file}";
     }
 
     /**
@@ -138,7 +138,7 @@ class Vite
      */
     public function js(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('johannschopplich.kirby-vite.entry', 'index.js');
+        $entry ??= option('kirby-extended.vite.entry', 'index.js');
 
         $client = $this->isDev() ? js($this->assetDev('@vite/client'), ['type' => 'module']) : '';
         $file = $this->isDev()

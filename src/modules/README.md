@@ -1,12 +1,11 @@
 # Modules
 
-> A custom user module system.
+A custom user module system. Place a `.ts` file with the following template, it will be installed automatically.
 
-Every `.js` file inside this folder following the template below will be installed automatically. Thus, no need to edit the `main.js` entry point of the app anymore.
+```ts
+import type { UserModule } from "~/types";
 
-```js
-/** @param {import("vue").App} app */
-export const install = (app) => {
-  // Do something with `app`, like `app.use`
+export const install: UserModule = ({ app, routes }) => {
+  // do something
 };
 ```

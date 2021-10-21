@@ -1,0 +1,7 @@
+main > *:not(:last-child) {
+  @apply mb-4;
+}
+
+.box {
+  @apply bg-white rounded-md shadow-sm p-4 dark:bg-gray-800;
+}

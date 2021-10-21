@@ -2,6 +2,9 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "johnsoncodehk.volar"
+    "johnsoncodehk.volar",
+    "csstools.postcss",
+    "voorjaar.windicss-intellisense",
+    "antfu.iconify"
   ]
 }

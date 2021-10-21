@@ -1,7 +1,6 @@
 {
   "private": true,
   "name": "kirby-vue-lightkit",
-  "version": "1.0.0",
   "scripts": {
     "kirby": "env-cmd --use-shell \"php -S \\$KIRBY_DEV_HOSTNAME:\\$KIRBY_DEV_PORT -t public server.php\"",
     "dev": "shx touch src/.lock && concurrently \"npm:kirby\" \"vite\"",
@@ -11,21 +10,31 @@
     "format": "prettier --write \"src/**/*.{js,vue}\""
   },
   "dependencies": {
+    "@vueuse/core": "^6.7.3",
     "vue": "^3.2.19",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
+    "@iconify/json": "^1.1.417",
+    "@types/node": "^16.11.2",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.2.20",
     "concurrently": "^6.3.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-vue": "^7.19.1",
+    "eslint-plugin-vue": "^7.20.0",
+    "postcss": "^8.3.10",
     "prettier": "2.4.1",
     "shx": "^0.3.3",
+    "unplugin-icons": "^0.12.16",
     "unplugin-vue-components": "^0.16.0",
     "vite": "^2.6.10",
-    "vite-plugin-pages": "^0.18.1"
+    "vite-plugin-pages": "^0.18.1",
+    "vite-plugin-vue-layouts": "^0.5.0",
+    "vite-plugin-windicss": "^1.4.12",
+    "windicss": "^3.1.9"
   }
 }

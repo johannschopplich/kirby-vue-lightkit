@@ -1,0 +1,15 @@
+html {
+  @apply bg-blue-800 text-gray-800;
+
+  &.dark {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+:focus:not(:focus-visible) {
+  @apply outline-none;
+}
+
+:focus-visible {
+  @apply focus-visible:ring-2 focus-visible:ring-blue-600;
+}

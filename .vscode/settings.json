@@ -1,6 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "volar.tsPluginStatus": false,
+  "css.validate": false,
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "iconify.inplace": false,
   "volar.codeLens.pugTools": false
 }

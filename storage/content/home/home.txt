@@ -2,16 +2,16 @@ Title: Home
 
 ----
 
-Text: [{"content":{"text":"<p>Did you know? Our company website is built with <strong>Kirby<\/strong> and <strong>Vue.js<\/strong>.<\/p>"},"id":"70d79c81-0c8f-4370-93c2-b8930d7c0008","isHidden":false,"type":"text"}]
+Text: [{"content":{"text":"<p>This text section is a <code>blocks<\/code> field and was pulled from the Kirby backend."},"id":"70d79c81-0c8f-4370-93c2-b8930d7c0008","isHidden":false,"type":"text"}]
 
 ----
 
-Customtitle: 
+Customtitle:
 
 ----
 
-Description: 
+Description:
 
 ----
 
-Thumbnail: 
+Thumbnail:

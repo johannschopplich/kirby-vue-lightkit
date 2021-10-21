@@ -17,13 +17,21 @@
   <?= vite()->css() ?>
   <?= vite()->js() ?>
 
+  <script>
+    ;(() => {
+      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light')) {
+        document.documentElement.classList.toggle('dark', true)
+      }
+    })()
+  </script>
+
 </head>
 <body>
 
   <div id="app"></div>
-  <script id="data-site" type="application/json">
-    <?= \Kirby\Data\Json::encode($data) ?>
-  </script>
+  <script id="data-site" type="application/json"><?= \Kirby\Data\Json::encode($data) ?></script>
 
 </body>
 </html>

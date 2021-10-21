@@ -18,6 +18,12 @@ return [
                 return isset($options['cache']) ? !$options['cache'] : false;
             }
         ]
+    ],
+
+    'kirby-extended' => [
+        'vite' => [
+            'entry' => 'main.ts'
+        ]
     ]
 
 ];

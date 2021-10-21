@@ -16,9 +16,12 @@
 ### Key Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next) & [Vite](https://vitejs.dev)
-- 🎢 [On-demand components auto importing](./src/components/)
-- 🍁 [Nuxt-inspired module system](./src/modules/)
-- 🗂 [File based routing](./src/pages) like Nuxt.js
+- 📦 [Components auto importing](./src/components/)
+- 📑 [Nuxt-inspired module system](./src/modules/)
+- 🗂 [File-based routing](./src/pages) like Nuxt.js
+- 📑 [Layout system](./src/layouts)
+- 🎨 [Windi CSS](https://github.com/windicss/windicss) – Next generation utility-first CSS framework
+- 😃 [Use icons from any icon sets, with no compromise](https://github.com/antfu/unplugin-icons)
 - 🔍 SEO-friendly: server-side generated meta tags
 
 ### Introduction
@@ -33,7 +36,7 @@ Think of this lightkit as the little brother of my [Kirby + Vue.js Starterkit](h
 
 Why not use Vue.js with [Kirby QL](https://github.com/getkirby/kql)? Well, for some projects I don't like the idea of an API user which has complete read access to the panel. I want to control, what a user can fetch from the project. Hence, [`controllers`](./site/controllers).
 
-### 🗂 File Based Routing
+### 🗂 File-Based Routing
 
 File components in the [`src/pages`](./src/pages) directory correspond to the frontend's route structure. The Vue Router is automatically populated by generated routes using [Vite](https://vitejs.dev)'s [glob import](https://vitejs.dev/guide/features.html#glob-import).
 
@@ -133,7 +136,7 @@ kirby-vue-lightkit/
 |   |   |   # Provides a object corresponding to Kirby's global `$site`
 |   |   └── useSite.js
 |   |
-|   |   # File based routing
+|   |   # File-based routing
 |   ├── pages/
 |   |
 |   ├── App.vue
