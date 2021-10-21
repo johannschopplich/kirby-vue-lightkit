@@ -10,7 +10,7 @@
 
     <div class="py-4" />
 
-    <div v-if="home.isReady" class="prose" v-html="home.text" />
+    <div v-if="page.isReady" class="prose" v-html="page.text" />
   </div>
 </template>
 
@@ -18,12 +18,11 @@
 import { useController } from "~/hooks";
 
 // Pass the controller name as parameter
-const home = useController("home");
+const page = useController("about");
 
 (async () => {
-  await home.isReadyPromise();
-  // Fetched data for homepage from network (first request only) or store
-  // You can access it now, for example:
-  console.log(home.title);
+  await page.isReadyPromise();
+
+  console.log(`Hello from the ${page.title} page`);
 })();
 </script>

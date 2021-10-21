@@ -1,0 +1,17 @@
+Title: About
+
+----
+
+Text: [{"content":{"text":"<p>This text section is a <code>blocks<\/code> field and was pulled from the Kirby backend."},"id":"59f4fc71-28b9-4c6d-b59f-7d2e5c289a5e","isHidden":false,"type":"text"}]
+
+----
+
+Customtitle:
+
+----
+
+Description:
+
+----
+
+Thumbnail:

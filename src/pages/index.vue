@@ -28,6 +28,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import { useController } from "~/hooks";
+
+// Pass the controller name as parameter
+const home = useController("home");
+
+(async () => {
+  await home.isReadyPromise();
+  // Fetched data for homepage from network (first request only) or store
+  // You can access it now, for example:
+  console.log(`Hello from the ${home.title} page`);
+})();
 
 const name = ref("");
 const router = useRouter();
