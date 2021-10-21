@@ -13,7 +13,7 @@ const store = new Map<string, ControllerData>();
 /**
  * Returns controller data from either store or network
  */
-const getController = async (id: string) => {
+const fetcher = async (id: string) => {
   let page;
   const url = `/controllers/${id}.json`;
 
@@ -61,7 +61,7 @@ export default (id: string): ControllerData => {
   });
 
   (async () => {
-    const data = await getController(id);
+    const data = await fetcher(id);
 
     if (!data) {
       page.__status = "error";
