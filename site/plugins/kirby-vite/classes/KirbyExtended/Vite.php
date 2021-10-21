@@ -115,16 +115,15 @@ class Vite
      */
     public function css(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('kirby-extended.vite.entry', 'index.js');
+        if ($this->isDev()) return null;
 
+        $entry ??= option('kirby-extended.vite.entry', 'index.js');
         $attr = array_merge($options, [
             'href' => $this->assetProd($this->getManifestProperty($entry, 'css')[0]),
             'rel'  => 'stylesheet'
         ]);
 
-        return !$this->isDev()
-            ? '<link ' . attr($attr) . '>'
-            : null;
+        return '<link ' . attr($attr) . '>';
     }
 
     /**
