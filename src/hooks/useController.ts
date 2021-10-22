@@ -47,8 +47,7 @@ export default (id: string): ControllerData => {
   if (!id) throw new Error("Missing argument (id).");
 
   // Setup page waiter promise
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  let resolve: (value?: unknown) => void = () => {};
+  let resolve: ((value?: unknown) => void) | undefined;
   const promise = new Promise((r) => {
     resolve = r;
   });
