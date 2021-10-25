@@ -50,14 +50,13 @@ export default defineConfig(({ mode }) => ({
       resolvers: [
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
-          prefix: "",
-          // enabledCollections: ['carbon']
+          prefix: false,
         }),
       ],
     }),
 
     // https://github.com/antfu/unplugin-icons
-    Icons({ autoInstall: true }),
+    Icons(),
 
     // https://github.com/antfu/vite-plugin-windicss
     WindiCSS({
