@@ -1,4 +1,3 @@
-/* eslint-env node */
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import Vue from "@vitejs/plugin-vue";

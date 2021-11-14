@@ -19,7 +19,7 @@
 - 📦 [Components auto importing](./src/components/)
 - 📑 [Nuxt-inspired module system](./src/modules/)
 - 🗂 [File-based routing](./src/pages) like Nuxt.js
-- 📑 [Layout system](./src/layouts)
+- 🧩 [Layout system](./src/layouts)
 - 🎨 [Windi CSS](https://github.com/windicss/windicss) – Next generation utility-first CSS framework
 - 😃 [Use icons from any icon sets, with no compromise](https://github.com/antfu/unplugin-icons)
 - 🔍 SEO-friendly: server-side generated meta tags
