@@ -12,22 +12,6 @@ class Vite
     protected static array $manifest;
 
     /**
-     * Checks for development mode by either `KIRBY_MODE` env var or
-     * if a `.lock` file in `/src` exists
-     *
-     * @return bool
-     */
-    protected function isDev(): bool
-    {
-        if (env('KIRBY_MODE') === 'development') {
-            return true;
-        }
-
-        $lockFile = kirby()->root('base') . '/src/.lock';
-        return F::exists($lockFile);
-    }
-
-    /**
      * Reads and parses the manifest file created by Vite
      *
      * @return array|null
@@ -106,6 +90,22 @@ class Vite
     }
 
     /**
+     * Checks for development mode by either `KIRBY_MODE` env var or
+     * if a `.lock` file in `/src` exists
+     *
+     * @return bool
+     */
+    public function isDev(): bool
+    {
+        if (env('KIRBY_MODE') === 'development') {
+            return true;
+        }
+
+        $lockFile = kirby()->root('base') . '/src/.lock';
+        return F::exists($lockFile);
+    }
+
+    /**
      * Includes the CSS file for the specified entry in production mode
      *
      * @param string|null $entry
@@ -117,7 +117,7 @@ class Vite
     {
         if ($this->isDev()) return null;
 
-        $entry ??= option('kirby-extended.vite.entry', 'index.js');
+        $entry ??= option('kirby-extended.vite.entry', 'main.js');
         $attr = array_merge($options, [
             'href' => $this->assetProd($this->getManifestProperty($entry, 'css')[0]),
             'rel'  => 'stylesheet'
@@ -137,7 +137,7 @@ class Vite
      */
     public function js(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('kirby-extended.vite.entry', 'index.js');
+        $entry ??= option('kirby-extended.vite.entry', 'main.js');
 
         $client = $this->isDev() ? js($this->assetDev('@vite/client'), ['type' => 'module']) : '';
         $file = $this->isDev()

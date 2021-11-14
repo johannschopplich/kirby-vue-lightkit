@@ -1,0 +1,35 @@
+{
+  "name": "johannschopplich/kirby-vite",
+  "description": "Vite integration for the Kirby CMS",
+  "type": "kirby-plugin",
+  "version": "1.0.1",
+  "keywords": [
+    "kirby",
+    "vite"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/johannschopplich/kirby-vite",
+  "authors": [
+    {
+      "name": "Johann Schopplich",
+      "email": "pkg@johannschopplich.com",
+      "homepage": "https://johannschopplich.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "getkirby/composer-installer": "^1.2"
+  },
+  "require-dev": {
+    "getkirby/cms": "^3.0"
+  },
+  "scripts": {
+    "dist": "composer install --no-dev --optimize-autoloader"
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "kirby-cms-path": false
+  }
+}

@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4373c23cad98c4d25baf27f63a733750a47930a8',
+        'reference' => '2d8f7f2ce1bdb1dd9907b23166afa6650525983e',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4373c23cad98c4d25baf27f63a733750a47930a8',
+            'reference' => '2d8f7f2ce1bdb1dd9907b23166afa6650525983e',
             'dev_requirement' => false,
         ),
         'claviska/simpleimage' => array(
@@ -71,6 +71,15 @@
             'install_path' => __DIR__ . '/../../site/plugins/kirby-extended',
             'aliases' => array(),
             'reference' => '2d3e30fdb26d9d131b84bfde2ad92607d2b66186',
+            'dev_requirement' => false,
+        ),
+        'johannschopplich/kirby-vite' => array(
+            'pretty_version' => '1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'kirby-plugin',
+            'install_path' => __DIR__ . '/../../site/plugins/kirby-vite',
+            'aliases' => array(),
+            'reference' => 'b1a3839e3b9499ea9dd26aa71719bd690a87408f',
             'dev_requirement' => false,
         ),
         'laminas/laminas-escaper' => array(

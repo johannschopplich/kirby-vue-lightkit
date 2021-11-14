@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d104bfcf24ef04b07e8124e7a6fc3965",
+    "content-hash": "c226c238b56be16991fc66d391bc4da8",
     "packages": [
         {
             "name": "claviska/simpleimage",
@@ -366,6 +366,54 @@
                 "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.10.1"
             },
             "time": "2021-10-21T06:43:53+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-vite",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johannschopplich/kirby-vite.git",
+                "reference": "b1a3839e3b9499ea9dd26aa71719bd690a87408f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/b1a3839e3b9499ea9dd26aa71719bd690a87408f",
+                "reference": "b1a3839e3b9499ea9dd26aa71719bd690a87408f",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "php": ">=7.4.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.0"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "pkg@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "Vite integration for the Kirby CMS",
+            "homepage": "https://github.com/johannschopplich/kirby-vite",
+            "keywords": [
+                "kirby",
+                "vite"
+            ],
+            "support": {
+                "issues": "https://github.com/johannschopplich/kirby-vite/issues",
+                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.1"
+            },
+            "time": "2021-11-09T15:50:36+00:00"
         },
         {
             "name": "laminas/laminas-escaper",

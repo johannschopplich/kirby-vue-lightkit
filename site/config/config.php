@@ -9,6 +9,8 @@ return [
         'slug' => env('KIRBY_PANEL_SLUG', 'panel')
     ],
 
+    'hooks' => require __DIR__ . '/hooks.php',
+
     'cache' => [
         'pages' => [
             'active' => env('KIRBY_CACHE', false),
