@@ -4,7 +4,7 @@ namespace KirbyExtended;
 
 use Exception;
 use Kirby\Data\Data;
-use Kirby\Toolkit\F;
+use Kirby\Filesystem\F;
 
 class Vite
 {
@@ -97,7 +97,7 @@ class Vite
      */
     public function isDev(): bool
     {
-        if (env('KIRBY_MODE') === 'development') {
+        if (function_exists('env') && env('KIRBY_MODE') === 'development') {
             return true;
         }
 
