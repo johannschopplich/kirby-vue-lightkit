@@ -178,12 +178,10 @@ kirby-vue-lightkit/
 
 ### Composer
 
-Kirby-related dependencies are managed via [Composer](https://getcomposer.org) and located in the `vendor` directory. Composer dependencies are tracked in this repository by default. Thus, no installation of Composer and executing `composer install` is required.
-
-Update dependencies with:
+Kirby-related dependencies are managed via [Composer](https://getcomposer.org) and located in the `vendor` directory. To install them, run:
 
 ```bash
-composer update
+composer install
 ```
 
 ### Node Dependencies
@@ -260,12 +258,6 @@ Vite will generate a hashed version of all assets, including images and fonts sa
 
 Now your project is hopefully up 'n' running!
 
-## Credits
-
-- Han（ハン） hannoeru for his [vite-pages](https://github.com/hannoeru/vite-pages) plugin
-
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
-
-It is discouraged to use this starterkit in any project that promotes racism, sexism, homophobia, animal abuse, violence or any other form of hate speech.
+[MIT](./LICENSE) License © 2021 [Johann Schopplich](https://github.com/johannschopplich)
