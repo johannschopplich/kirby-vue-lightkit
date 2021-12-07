@@ -189,7 +189,7 @@ composer install
 Install npm dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 ### Environment Variables
@@ -247,16 +247,9 @@ Vite will generate a hashed version of all assets, including images and fonts sa
 
 ### Deployment
 
-1. Deploy the repository on your server.
-2. Duplicate [`.env.example`](.env.example) as `.env`.
-3. Install npm dependencies and build frontend assets: `npm i && npm run build`.
-4. Change variables in your `.env`:
-   - `KIRBY_DEBUG` to `false`
-   - `KIRBY_CACHE` to `true` (optional)
-5. Point your web server to the `public` folder.
-6. Some hosting environments require to uncomment `RewriteBase /` in [`.htaccess`](public/.htaccess) to make site links work.
+> ℹ️ See [ploi-deploy.sh](./scripts/ploi-deploy.sh) for exemplary deployment instructions.
 
-Now your project is hopefully up 'n' running!
+> ℹ️ Some hosting environments require to uncomment `RewriteBase /` in [`.htaccess`](public/.htaccess) to make site links work.
 
 ## License
 
