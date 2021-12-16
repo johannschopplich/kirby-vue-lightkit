@@ -4,7 +4,6 @@
     "esbenp.prettier-vscode",
     "johnsoncodehk.volar",
     "csstools.postcss",
-    "voorjaar.windicss-intellisense",
-    "antfu.iconify"
+    "voorjaar.windicss-intellisense"
   ]
 }

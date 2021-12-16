@@ -5,6 +5,5 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "iconify.inplace": false,
   "volar.codeLens.pugTools": false
 }
