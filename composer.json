@@ -6,7 +6,10 @@
     "johannschopplich/kirby-vite": "^1.0"
   },
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    }
   },
   "extra": {
     "kirby-cms-path": false
