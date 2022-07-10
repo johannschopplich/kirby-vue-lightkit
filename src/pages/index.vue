@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useController } from "~/hooks";
+import { useController } from "~/composables";
 
 // Pass the controller name as parameter
 const home = useController("home");
@@ -46,8 +46,3 @@ const go = () => {
   if (name.value) router.push(`/hello/${encodeURIComponent(name.value)}`);
 };
 </script>
-
-<route lang="yaml">
-meta:
-  layout: home
-</route>

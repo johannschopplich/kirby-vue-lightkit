@@ -19,8 +19,7 @@
 - 📦 [Components auto importing](./src/components/)
 - 📑 [Nuxt-inspired module system](./src/modules/)
 - 🗂 [File-based routing](./src/pages) like Nuxt.js
-- 🧩 [Layout system](./src/layouts)
-- 🎨 [Windi CSS](https://github.com/windicss/windicss) – Next generation utility-first CSS framework
+- 🎨 [UnoCSS](https://github.com/unocss/unocss) – Instant on-demand atomic CSS engine
 - 😃 [Use icons from any icon sets, with no compromise](https://github.com/antfu/unplugin-icons)
 - 🔍 SEO-friendly: server-side generated meta tags
 
@@ -127,8 +126,8 @@ kirby-vue-lightkit/
 |   |   # All components will be auto imported on-demand
 |   ├── components/
 |   |
-|   |   # Hooks for common actions
-|   ├── hooks/
+|   |   # Composables for common actions
+|   ├── composables/
 |   |   |
 |   |   |   # Fetch data of a controller by id
 |   |   ├── useController.js

@@ -1,5 +1,11 @@
 <template>
-  <main class="mx-auto max-w-screen-md py-4 px-4">
-    <router-view />
+  <main class="max-w-screen-md mx-auto p-4 space-y-4">
+    <Header />
+
+    <div class="box">
+      <router-view />
+    </div>
+
+    <Footer />
   </main>
 </template>

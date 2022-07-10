@@ -2,6 +2,7 @@
 .env
 node_modules
 vendor
+components.d.ts
 
 # Kirby
 .lock

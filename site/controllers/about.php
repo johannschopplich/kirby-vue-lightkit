@@ -1,6 +1,6 @@
 <?php
 
-return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site) {
+return function (\Kirby\Cms\App $kirby) {
     $about = $kirby->page('about');
 
     return [

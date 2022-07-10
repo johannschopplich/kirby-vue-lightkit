@@ -1,21 +1,19 @@
 import { createApp } from "vue";
-import generatedRoutes from "virtual:generated-pages";
-import { setupLayouts } from "virtual:generated-layouts";
+import routes from "virtual:generated-pages";
 import App from "./App.vue";
+import type { UserModuleImport } from "./types";
 
-import "virtual:windi-base.css";
-import "virtual:windi-components.css";
-
-// Your custom styles here
+import "@unocss/reset/tailwind.css";
 import "./styles/index.css";
-
-import "virtual:windi-utilities.css";
-import "virtual:windi-devtools";
+import "uno.css";
 
 const app = createApp(App);
-const routes = setupLayouts(generatedRoutes);
 
-for (const m of Object.values(import.meta.globEager("./modules/*.ts"))) {
+for (const m of Object.values(
+  import.meta.glob<true, string, UserModuleImport>("./modules/*.ts", {
+    eager: true,
+  })
+)) {
   m.install?.({ app, routes });
 }
 

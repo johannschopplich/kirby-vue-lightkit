@@ -1,18 +1,26 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["esnext", "dom"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "paths": {
       "~/*": ["./src/*"]
     },
+    "types": [
+      "vite/client",
+      "vite-plugin-pages/client",
+      "unplugin-icons/types/vue",
+      "vue/macros-global"
+    ],
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noUnusedLocals": true,
+    "sourceMap": true,
     "skipLibCheck": true
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

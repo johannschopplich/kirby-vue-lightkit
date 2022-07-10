@@ -1,3 +1,15 @@
-@import "core.css";
-@import "components.css";
-@import "layout.css";
+html {
+  @apply bg-blue-800 text-gray-800 dark:bg-gray-900 dark:text-white;
+}
+
+:focus:not(:focus-visible) {
+  @apply outline-none;
+}
+
+:focus-visible {
+  @apply focus-visible:ring-2 focus-visible:ring-blue-600;
+}
+
+.icon-transition {
+  @apply transition ease-in-out duration-200;
+}

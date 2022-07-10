@@ -1,9 +1,9 @@
 <?php
 
-return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site) {
+return function (\Kirby\Cms\App $kirby) {
     return [
         'data' => [
-            'title' => $site->title()->value()
+            'title' => $kirby->site()->title()->value()
         ]
     ];
 };

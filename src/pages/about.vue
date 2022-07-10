@@ -10,12 +10,13 @@
 
     <div class="py-4" />
 
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="page.isReady" class="prose" v-html="page.text" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useController } from "~/hooks";
+import { useController } from "~/composables";
 
 // Pass the controller name as parameter
 const page = useController("about");

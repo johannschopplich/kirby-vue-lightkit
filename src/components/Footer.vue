@@ -10,7 +10,7 @@
     </button>
 
     <a
-      class="cursor-pointer text-[currentColor] text-2xl"
+      class="cursor-pointer text-current text-2xl"
       rel="noreferrer"
       href="https://github.com/johannschopplich/kirby-vue-lightkit"
       target="_blank"
@@ -19,14 +19,8 @@
       <carbon-logo-github class="icon-inline icon-transition" />
     </a>
   </nav>
-
-  <div class="mx-auto mt-4 text-center text-sm text-white opacity-40">
-    [{{ props.layout ?? "Default" }} Layout]
-  </div>
 </template>
 
 <script setup lang="ts">
 import { isDark, toggleDark } from "~/logic";
-
-const props = defineProps<{ layout?: string }>();
 </script>

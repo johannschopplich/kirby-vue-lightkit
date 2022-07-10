@@ -1,7 +1,7 @@
 <?php
 
-return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site) {
-    $home = $site->homePage();
+return function (\Kirby\Cms\App $kirby) {
+    $home = $kirby->site()->homePage();
 
     return [
         'data' => [
