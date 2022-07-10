@@ -4,9 +4,8 @@ import Vue from "@vitejs/plugin-vue";
 import Pages from "vite-plugin-pages";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
-import Layouts from "vite-plugin-vue-layouts";
 import Components from "unplugin-vue-components/vite";
-import WindiCSS from "vite-plugin-windicss";
+import UnoCSS from "unocss/vite";
 
 const root = "src";
 
@@ -37,41 +36,20 @@ export default defineConfig(({ mode }) => ({
       pagesDir: "pages",
     }),
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts({
-      layoutsDirs: ["layouts"],
-    }),
-
     // https://github.com/antfu/unplugin-vue-components
     Components({
       dirs: ["components"],
       dts: "components.d.ts",
       resolvers: [
         // https://github.com/antfu/unplugin-icons
-        IconsResolver({
-          prefix: false,
-        }),
+        IconsResolver({ prefix: false }),
       ],
     }),
 
     // https://github.com/antfu/unplugin-icons
     Icons(),
 
-    // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
-      scan: {
-        include: ["**/*.vue"],
-      },
-    }),
+    // https://github.com/unocss/unocss
+    UnoCSS(),
   ],
-
-  server: {
-    cors: true,
-    port: 3000,
-    strictPort: true,
-  },
-
-  optimizeDeps: {
-    include: ["vue", "vue-router", "@vueuse/core"],
-  },
 }));
