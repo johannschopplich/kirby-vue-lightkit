@@ -4,34 +4,36 @@
     "kirby": "env-cmd --use-shell \"php -S \\$KIRBY_DEV_HOSTNAME:\\$KIRBY_DEV_PORT -t public vendor/getkirby/cms/router.php\"",
     "dev": "shx touch src/.lock && concurrently \"npm:kirby\" \"vite\"",
     "build": "shx rm -f src/.lock && vite build",
-    "lint": "eslint \"src/**/*.{ts,vue}\"",
+    "lint": "eslint \"src/**/*.{ts,vue}\" --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"src/**/*.{ts,vue}\""
+    "format": "prettier --write \"src/**/*.{ts,vue}\" --ignore-path .gitignore"
   },
   "dependencies": {
-    "@vueuse/core": "^7.6.2",
-    "vue": "^3.2.31",
-    "vue-router": "^4.0.12"
+    "@unocss/reset": "^0.44.0",
+    "@vueuse/core": "^8.9.1",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.1"
   },
   "devDependencies": {
-    "@iconify/json": "^2.1.6",
-    "@types/node": "^17.0.21",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
-    "@vitejs/plugin-vue": "^2.2.2",
-    "concurrently": "^7.0.0",
+    "@iconify/json": "^2.1.75",
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "@unocss/preset-typography": "^0.44.0",
+    "@unocss/preset-wind": "^0.44.0",
+    "@unocss/transformer-directives": "^0.44.0",
+    "@vitejs/plugin-vue": "^3.0.0-beta.1",
+    "concurrently": "^7.2.2",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.9.0",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-vue": "^8.5.0",
-    "prettier": "2.5.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "prettier": "2.7.1",
     "shx": "^0.3.4",
-    "unplugin-icons": "^0.13.2",
-    "unplugin-vue-components": "^0.17.20",
-    "vite": "^2.8.4",
-    "vite-plugin-pages": "^0.20.2",
-    "vite-plugin-vue-layouts": "^0.6.0",
-    "vite-plugin-windicss": "^1.7.1",
-    "windicss": "^3.4.4"
+    "unocss": "^0.44.0",
+    "unplugin-icons": "^0.14.7",
+    "unplugin-vue-components": "^0.21.1",
+    "vite": "^3.0.0-beta.9",
+    "vite-plugin-pages": "^0.25.0"
   }
 }

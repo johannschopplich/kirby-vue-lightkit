@@ -8,7 +8,7 @@ load([
     'options' => [
         'entry' => 'main.js',
         'outDir' => 'dist',
-        'devServer' => 'http://localhost:3000'
+        'devServer' => 'http://localhost:5173'
     ]
 ]);
 

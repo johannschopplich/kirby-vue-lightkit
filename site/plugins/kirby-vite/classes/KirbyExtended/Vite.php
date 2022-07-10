@@ -75,7 +75,7 @@ class Vite
      */
     protected function assetDev(string $file): string
     {
-        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . '/' . "{$file}";
+        return option('kirby-extended.vite.devServer', 'http://localhost:5173') . '/' . "{$file}";
     }
 
     /**
