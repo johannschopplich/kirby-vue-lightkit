@@ -1,9 +1,9 @@
 {
   "recommendations": [
+    "antfu.unocss",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "johnsoncodehk.volar",
-    "csstools.postcss",
-    "voorjaar.windicss-intellisense"
+    "Vue.volar",
+    "csstools.postcss"
   ]
 }

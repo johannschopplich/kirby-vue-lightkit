@@ -1,9 +1,11 @@
 {
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "css.validate": false,
   "files.associations": {
     "*.css": "postcss"
-  },
-  "volar.codeLens.pugTools": false
+  }
 }
