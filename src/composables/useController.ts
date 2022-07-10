@@ -1,4 +1,4 @@
-import { shallowReactive, readonly } from "vue";
+import { readonly, shallowReactive } from "vue";
 
 export interface ControllerData {
   readonly __status: string;
@@ -44,7 +44,7 @@ const fetcher = async (id: string) => {
  * Returns data for a given controller
  */
 export default (id: string): ControllerData => {
-  if (!id) throw new Error("Missing argument (id).");
+  if (!id) throw new Error("Missing controller id");
 
   // Setup page waiter promise
   let resolve: ((value?: unknown) => void) | undefined;
