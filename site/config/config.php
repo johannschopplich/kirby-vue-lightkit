@@ -9,7 +9,13 @@ return [
         'slug' => env('KIRBY_PANEL_SLUG', 'panel')
     ],
 
-    'hooks' => require __DIR__ . '/hooks.php',
+    'hooks' => [
+        'system.loadPlugins:after' => function () {
+            kirby()->extend([
+                'routes' => require __DIR__ . '/routes.php'
+            ]);
+        }
+    ],
 
     'cache' => [
         'pages' => [

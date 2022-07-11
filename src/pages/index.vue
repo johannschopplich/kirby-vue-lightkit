@@ -5,9 +5,7 @@
         <carbon-sailboat-offshore class="inline-block" />
       </p>
       <p class="text-xl">Kirby Vue Lightkit</p>
-      <p class="text-sm opacity-75">
-        Opinionated Kirby + Vite Starter Template
-      </p>
+      <p class="text-sm opacity-75">Opinionated Kirby + Vue Starter Template</p>
     </div>
 
     <form class="flex max-w-sm space-x-3 w-full">

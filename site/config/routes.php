@@ -8,7 +8,6 @@ return [
         'pattern' => 'controllers/(:all).json',
         'action' => function ($key) {
             $kirby = kirby();
-
             $cache = $kirby->cache('pages');
             $cacheKey = $key . '-json';
             $data = $cache->get($cacheKey);

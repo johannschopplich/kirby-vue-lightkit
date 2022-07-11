@@ -9,8 +9,8 @@ export interface ControllerData {
   readonly [key: string]: any;
 }
 
-const promiseMap = new Map<string, Promise<any>>();
 const payloadCache = new Map<string, any>();
+const promiseMap = new Map<string, Promise<any>>();
 
 /**
  * Returns controller data from either store or network

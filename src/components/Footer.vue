@@ -22,5 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import { isDark, toggleDark } from "~/logic";
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 </script>
