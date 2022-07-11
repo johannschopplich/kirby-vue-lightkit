@@ -1,11 +1,7 @@
 {
-  "css.validate": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "files.associations": {
-    "*.css": "postcss"
-  }
+  "editor.formatOnSave": true
 }
