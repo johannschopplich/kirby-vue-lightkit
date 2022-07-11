@@ -6,29 +6,28 @@ use Kirby\Toolkit\Controller;
 return [
     [
         'pattern' => 'controllers/(:all).json',
-        'action' => function ($name) {
+        'action' => function ($key) {
             $kirby = kirby();
-            $site = $kirby->site();
-            $data = null;
 
-            $cacheActive = env('KIRBY_CACHE', false) === true && $kirby->user() === null;
-            $cacheBucket = $kirby->cache('pages');
-            $cacheKey = $name . '-json';
+            $cache = $kirby->cache('pages');
+            $cacheKey = $key . '-json';
+            $data = $cache->get($cacheKey);
 
-            if ($cacheActive && $cacheBucket->exists($cacheKey)) {
-                return Response::json($cacheBucket->get($cacheKey));
-            }
+            if ($data === null) {
+                $controller = Controller::load($kirby->root('controllers') . '/' . $key . '.php');
 
-            $controller = Controller::load($kirby->root('controllers') . '/' . $name . '.php');
+                if ($controller === null) {
+                    return Response::json([
+                        'error' => 'The controller does not exist'
+                    ], 404);
+                }
 
-            if ($controller === null) {
-                return Response::json(['error' => 'Not Found'], 404);
-            }
+                $data = $controller->call(null, [
+                    'kirby' => $kirby,
+                    'site' => $kirby->site()
+                ]);
 
-            $data = $controller->call(null, compact('kirby', 'site'));
-
-            if ($cacheActive) {
-                $cacheBucket->set($cacheKey, $data);
+                $cache->set($cacheKey, $data);
             }
 
             return Response::json($data);
@@ -37,7 +36,8 @@ return [
     [
         'pattern' => '(:all)',
         'action' => function ($pageId) {
-            return page($pageId) ?? site()->homePage();
+            $kirby = kirby();
+            return $kirby->page($pageId) ?? $kirby->site()->homePage();
         }
     ]
 ];
