@@ -14,11 +14,7 @@ return [
     'cache' => [
         'pages' => [
             'active' => env('KIRBY_CACHE', false),
-            'ignore' => function ($page) {
-                if (kirby()->user() !== null) return true;
-                $options = $page->blueprint()->options();
-                return isset($options['cache']) ? !$options['cache'] : false;
-            }
+            'ignore' => fn (\Kirby\Cms\Page $page) => $page->kirby()->user() !== null
         ]
     ],
 
