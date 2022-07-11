@@ -1,56 +1,49 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { readonly, shallowReactive } from "vue";
+import { $fetch } from "ohmyfetch";
 
 export interface ControllerData {
   readonly __status: string;
   readonly isReady: boolean;
-  readonly isReadyPromise: () => Promise<unknown>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  readonly isReadyPromise: () => Promise<void>;
   readonly [key: string]: any;
 }
 
-const store = new Map<string, ControllerData>();
+const promiseMap = new Map<string, Promise<any>>();
+const payloadCache = new Map<string, any>();
 
 /**
  * Returns controller data from either store or network
  */
-const fetcher = async (id: string) => {
-  let page;
-  const url = `/controllers/${id}.json`;
+function fetcher(id: string) {
+  const key = `/controllers/${id}.json`;
 
-  if (store.has(id)) {
-    return store.get(id);
+  if (payloadCache.has(key)) {
+    return Promise.resolve(payloadCache.get(key));
   }
 
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Request ${url} failed with "${response.statusText}".`);
-    }
-
-    const { data } = await response.json();
-    page = data;
-  } catch (error) {
-    console.error(error);
-    return false;
+  if (promiseMap.has(key)) {
+    return promiseMap.get(key);
   }
 
-  store.set(id, page);
+  const request = $fetch(key).then((response) => {
+    payloadCache.set(key, response);
+    promiseMap.delete(key);
+    return response;
+  });
 
-  return page;
-};
+  promiseMap.set(key, request);
+
+  return request;
+}
 
 /**
  * Returns data for a given controller
  */
-export default (id: string): ControllerData => {
-  if (!id) throw new Error("Missing controller id");
-
+export function useController(id: string): ControllerData {
   // Setup page waiter promise
-  let resolve: ((value?: unknown) => void) | undefined;
-  const promise = new Promise((r) => {
-    resolve = r;
-  });
+  let resolve: (() => void) | undefined;
+  const promise = new Promise<void>((r) => (resolve = r));
 
   // Setup reactive page object
   const page = shallowReactive({
@@ -60,20 +53,26 @@ export default (id: string): ControllerData => {
   });
 
   (async () => {
-    const data = await fetcher(id);
-
-    if (!data) {
+    if (!id) {
+      console.error("[useController] id is required");
       page.__status = "error";
+      resolve?.();
       return;
     }
 
-    // Append page data to reactive page object
-    Object.assign(page, data);
+    try {
+      const { data } = await fetcher(id);
 
-    page.__status = "resolved";
-    page.isReady = true;
-    resolve?.();
+      // Append page data to reactive page object
+      Object.assign(page, data);
+
+      page.__status = "resolved";
+      page.isReady = true;
+      resolve?.();
+    } catch (e) {
+      page.__status = "error";
+    }
   })();
 
   return readonly(page);
-};
+}
