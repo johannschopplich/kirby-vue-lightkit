@@ -5,8 +5,8 @@
       title="Toggle dark mode"
       @click="toggleDark()"
     >
-      <carbon-moon v-if="isDark" class="icon-inline icon-transition" />
-      <carbon-sun v-else class="icon-inline icon-transition" />
+      <carbon-moon v-if="isDark" class="icon-inline" />
+      <carbon-sun v-else class="icon-inline" />
     </button>
 
     <a
@@ -16,7 +16,7 @@
       target="_blank"
       title="GitHub"
     >
-      <carbon-logo-github class="icon-inline icon-transition" />
+      <carbon-logo-github class="icon-inline" />
     </a>
   </nav>
 </template>

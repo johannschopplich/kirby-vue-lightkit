@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <p class="text-4xl">
-      <carbon-sailboat-offshore class="inline-block" />
-    </p>
-    <p class="text-xl">Kirby Vue Lightkit</p>
-    <p class="text-sm opacity-75">Opinionated Kirby + Vite Starter Template</p>
-
-    <div class="py-4" />
+  <div class="space-y-4">
+    <div>
+      <p class="text-4xl">
+        <carbon-sailboat-offshore class="inline-block" />
+      </p>
+      <p class="text-xl">Kirby Vue Lightkit</p>
+      <p class="text-sm opacity-75">
+        Opinionated Kirby + Vite Starter Template
+      </p>
+    </div>
 
     <form class="flex max-w-sm space-x-3 w-full">
       <label for="input" hidden>What’s your name?</label>
@@ -33,6 +35,9 @@ import { useController } from "~/composables";
 // Pass the controller name as parameter
 const home = useController("home");
 
+const name = ref("");
+const router = useRouter();
+
 (async () => {
   await home.isReadyPromise();
   // Fetched data for homepage from network (first request only) or store
@@ -40,9 +45,7 @@ const home = useController("home");
   console.log(`Hello from the ${home.title} page`);
 })();
 
-const name = ref("");
-const router = useRouter();
-const go = () => {
+function go() {
   if (name.value) router.push(`/hello/${encodeURIComponent(name.value)}`);
-};
+}
 </script>

@@ -1,14 +1,16 @@
 <template>
-  <carbon-warning class="text-4xl" />
-  <h2 class="text-xl">Not Found</h2>
+  <div class="space-y-4">
+    <div>
+      <CarbonWarning class="text-4xl" />
+      <h2 class="text-xl">Not Found</h2>
 
-  <p>
-    Requested path: <code>{{ route.path }}</code>
-  </p>
+      <p>
+        Requested path: <code>{{ route.path }}</code>
+      </p>
+    </div>
 
-  <div class="py-4" />
-
-  <button class="button" @click="router.back()">Back</button>
+    <button class="button" @click="router.back()">Back</button>
+  </div>
 </template>
 
 <script setup lang="ts">

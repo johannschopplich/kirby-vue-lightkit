@@ -1,14 +1,13 @@
 <template>
   <div>
     <p class="text-4xl">
-      <carbon-haze class="inline-block" />
+      <CarbonHaze class="inline-block" />
     </p>
     <p class="text-xl">About</p>
+
     <p class="text-sm opacity-75">
       Example of the <code>useController</code> hook
     </p>
-
-    <div class="py-4" />
 
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div v-if="page.isReady" class="prose" v-html="page.text" />

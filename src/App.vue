@@ -3,7 +3,7 @@
     <Header />
 
     <div class="box">
-      <router-view />
+      <RouterView />
     </div>
 
     <Footer />

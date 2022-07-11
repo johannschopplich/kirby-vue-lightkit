@@ -1,18 +1,17 @@
 <template>
-  <h1 class="text-xl">Hi, {{ props.name }}!</h1>
+  <div class="space-y-4">
+    <div>
+      <h1 class="text-xl">Hi, {{ props.name }}!</h1>
+      <p class="text-sm opacity-75">Demo of a dynamic route</p>
+    </div>
 
-  <p class="text-sm opacity-75">Demo of a dynamic route</p>
+    <p>
+      All children pages of <code>/hello/*</code> will be rendered by this
+      component.
+    </p>
 
-  <div class="py-4" />
-
-  <p>
-    All children pages of <code>/hello/*</code> will be rendered by this
-    component.
-  </p>
-
-  <div class="py-4" />
-
-  <button class="button" @click="router.back()">Back</button>
+    <button class="button" @click="router.back()">Back</button>
+  </div>
 </template>
 
 <script setup lang="ts">
