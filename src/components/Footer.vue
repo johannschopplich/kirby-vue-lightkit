@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+</script>
+
 <template>
   <nav class="flex flex-wrap space-x-4 box">
     <button
@@ -20,10 +27,3 @@
     </a>
   </nav>
 </template>
-
-<script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
-
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
-</script>

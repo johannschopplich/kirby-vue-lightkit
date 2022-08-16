@@ -2,7 +2,7 @@
   "name": "johannschopplich/kirby-vite",
   "description": "Vite integration for the Kirby CMS",
   "type": "kirby-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "kirby",
     "vite"

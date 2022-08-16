@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const props = defineProps<{ name: string }>();
+const router = useRouter();
+</script>
+
 <template>
   <div class="space-y-4">
     <div>
@@ -13,10 +20,3 @@
     <button class="button" @click="router.back()">Back</button>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useRouter } from "vue-router";
-
-const props = defineProps<{ name: string }>();
-const router = useRouter();
-</script>

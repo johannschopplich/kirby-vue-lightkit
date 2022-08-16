@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useController } from "~/composables";
+
+// Pass the controller name as parameter
+const home = useController("home");
+
+const name = ref("");
+const router = useRouter();
+
+(async () => {
+  await home.isReadyPromise();
+  // Fetched data for homepage from network (first request only) or store
+  // You can access it now, for example:
+  console.log(`Hello from the ${home.title} page`);
+})();
+
+function go() {
+  if (name.value) router.push(`/hello/${encodeURIComponent(name.value)}`);
+}
+</script>
+
 <template>
   <div class="space-y-4">
     <div>
@@ -24,26 +47,3 @@
     </form>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { useController } from "~/composables";
-
-// Pass the controller name as parameter
-const home = useController("home");
-
-const name = ref("");
-const router = useRouter();
-
-(async () => {
-  await home.isReadyPromise();
-  // Fetched data for homepage from network (first request only) or store
-  // You can access it now, for example:
-  console.log(`Hello from the ${home.title} page`);
-})();
-
-function go() {
-  if (name.value) router.push(`/hello/${encodeURIComponent(name.value)}`);
-}
-</script>

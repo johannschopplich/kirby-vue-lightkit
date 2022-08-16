@@ -14,10 +14,9 @@ class Vite
     /**
      * Reads and parses the manifest file created by Vite
      *
-     * @return array|null
      * @throws Exception
      */
-    protected function useManifest(): ?array
+    protected function useManifest(): array|null
     {
         if (isset(static::$manifest)) {
             return static::$manifest;
@@ -39,12 +38,9 @@ class Vite
     /**
      * Gets a value of a manifest property for a specific entry
      *
-     * @param string $entry
-     * @param string $key
-     * @return string|void
      * @throws Exception
      */
-    protected function getManifestProperty(string $entry, $key = 'file')
+    protected function getManifestProperty(string $entry, string $key = 'file'): string|array
     {
         $manifestEntry = $this->useManifest()[$entry] ?? null;
         if (!$manifestEntry) {
@@ -52,7 +48,7 @@ class Vite
                 throw new Exception("{$entry} is not a manifest entry");
             }
 
-            return;
+            return "";
         }
 
         $value = $manifestEntry[$key] ?? null;
@@ -61,7 +57,7 @@ class Vite
                 throw new Exception("{$key} not found in manifest entry {$entry}");
             }
 
-            return;
+            return "";
         }
 
         return $value;
@@ -69,9 +65,6 @@ class Vite
 
     /**
      * Gets the URL for the specified file in development mode
-     *
-     * @param string $file
-     * @return string
      */
     protected function assetDev(string $file): string
     {
@@ -80,9 +73,6 @@ class Vite
 
     /**
      * Gets the URL for the specified file in production mode
-     *
-     * @param string $file
-     * @return string
      */
     protected function assetProd(string $file): string
     {
@@ -92,8 +82,6 @@ class Vite
     /**
      * Checks for development mode by either `KIRBY_MODE` env var or
      * if a `.lock` file in `/src` exists
-     *
-     * @return bool
      */
     public function isDev(): bool
     {
@@ -108,14 +96,13 @@ class Vite
     /**
      * Includes the CSS file for the specified entry in production mode
      *
-     * @param string|null $entry
-     * @param array|null $options
-     * @return string|null
      * @throws Exception
      */
-    public function css(string $entry = null, array $options = []): ?string
+    public function css(string|null $entry = null, array|null $options = []): string|null
     {
-        if ($this->isDev()) return null;
+        if ($this->isDev()) {
+            return null;
+        }
 
         $entry ??= option('kirby-extended.vite.entry', 'main.js');
         $attr = array_merge($options, [
@@ -130,12 +117,9 @@ class Vite
      * Includes the JS file for the specified entry and
      * Vite's client in development mode as well
      *
-     * @param string|null $entry
-     * @param array $options
-     * @return string|null
      * @throws Exception
      */
-    public function js(string $entry = null, array $options = []): ?string
+    public function js(string|null $entry = null, array $options = []): string|null
     {
         $entry ??= option('kirby-extended.vite.entry', 'main.js');
 
@@ -159,6 +143,6 @@ class Vite
      */
     public static function getInstance(): \KirbyExtended\Vite
     {
-        return static::$instance ??= new static;
+        return static::$instance ??= new static();
     }
 }

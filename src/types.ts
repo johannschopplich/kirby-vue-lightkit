@@ -7,7 +7,3 @@ export interface UserModuleContext {
 }
 
 export type UserModule = (ctx: UserModuleContext) => void | Promise<void>;
-
-export interface UserModuleExport {
-  install?: UserModule;
-}
