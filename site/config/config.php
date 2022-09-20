@@ -24,9 +24,11 @@ return [
         ]
     ],
 
-    'kirby-extended' => [
+    'kirby-helpers' => [
         'vite' => [
-            'entry' => 'main.ts'
+            'server' => [
+                'host' => 'localhost'
+            ]
         ]
     ]
 

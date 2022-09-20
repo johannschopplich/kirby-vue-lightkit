@@ -107,14 +107,6 @@ kirby-vue-lightkit/
 |   |   |   # Acts as global site object similar to Kirby's `$site`
 |   |   └── default.php
 |   |
-|   ├── plugins/kirby-vite/
-|   |   |
-|   |   |   # Core of the Vite integration plugin, mainly registers routes
-|   |   ├── index.php
-|   |   |
-|   |   |   # Routes to handle controller requests
-|   |   └── routes.php
-|   |
 |   └── templates/
 |       |
 |       |   # Index page and main entry point for the web application

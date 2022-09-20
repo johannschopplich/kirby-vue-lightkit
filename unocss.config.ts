@@ -1,7 +1,9 @@
-import { defineConfig } from "unocss";
-import presetTypography from "@unocss/preset-typography";
-import presetWind from "@unocss/preset-wind";
-import transformerDirective from "@unocss/transformer-directives";
+import {
+  defineConfig,
+  presetTypography,
+  presetWind,
+  transformerDirectives,
+} from "unocss";
 
 const control =
   "appearance-none text-base leading-4 px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm";
@@ -14,6 +16,6 @@ export default defineConfig({
     "icon-inline":
       "w-[1em] h-[1em] relative bottom-[0.125em] inline-block fill-current text-current select-none",
   },
-  transformers: [transformerDirective()],
+  transformers: [transformerDirectives()],
   presets: [presetTypography(), presetWind()],
 });

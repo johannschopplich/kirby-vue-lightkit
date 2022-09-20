@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "version": "3.0.2",
+  "scripts": {
+    "release": "npx -y bumpp --all"
+  }
+}

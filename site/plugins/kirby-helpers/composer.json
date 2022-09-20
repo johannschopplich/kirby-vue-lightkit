@@ -1,14 +1,21 @@
 {
-  "name": "johannschopplich/kirby-vite",
-  "description": "Vite integration for the Kirby CMS",
+  "name": "johannschopplich/kirby-helpers",
+  "description": "Dotenv support, meta tags generation and more for the Kirby CMS",
   "type": "kirby-plugin",
-  "version": "1.0.4",
+  "version": "3.0.2",
   "keywords": [
+    "kirby-cms",
+    "getkirby",
     "kirby",
+    "env",
+    "dotenv",
+    "seo",
+    "meta",
+    "meta-tags",
     "vite"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/johannschopplich/kirby-vite#readme",
+  "homepage": "https://github.com/johannschopplich/kirby-helpers#readme",
   "authors": [
     {
       "name": "Johann Schopplich",
@@ -18,10 +25,20 @@
   ],
   "require": {
     "php": ">=8.0.0",
-    "getkirby/composer-installer": "^1.2"
+    "getkirby/composer-installer": "^1.2",
+    "symfony/polyfill-php80": "^1.26",
+    "vlucas/phpdotenv": "^5.0"
   },
   "require-dev": {
     "getkirby/cms": "^3.7"
+  },
+  "autoload": {
+    "files": [
+      "helpers.php"
+    ],
+    "psr-4": {
+      "KirbyHelpers\\": "classes/KirbyHelpers/"
+    }
   },
   "scripts": {
     "dist": "composer install --no-dev --optimize-autoloader"

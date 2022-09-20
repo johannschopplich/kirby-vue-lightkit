@@ -14,8 +14,8 @@
 
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 
-  <?= vite()->js() ?>
-  <?= vite()->css() ?>
+  <?= vite()->js('main.ts') ?>
+  <?= vite()->css('main.ts') ?>
 
   <script>
     ;(() => {

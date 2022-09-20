@@ -2,38 +2,35 @@
   "private": true,
   "scripts": {
     "kirby": "env-cmd --use-shell \"php -S \\$KIRBY_DEV_HOSTNAME:\\$KIRBY_DEV_PORT -t public vendor/getkirby/cms/router.php\"",
-    "dev": "shx touch src/.lock && concurrently \"npm:kirby\" \"vite\"",
-    "build": "shx rm -f src/.lock && vite build",
+    "dev": "shx rm -rf public/dist && concurrently \"npm:kirby\" \"vite\"",
+    "build": "vite build",
     "lint": "eslint \"src/**/*.{ts,vue}\" --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"src/**/*.{ts,vue}\" --ignore-path .gitignore"
   },
   "dependencies": {
-    "@unocss/reset": "^0.45.7",
-    "@vueuse/core": "^9.1.0",
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.3"
+    "@unocss/reset": "^0.45.22",
+    "@vueuse/core": "^9.2.0",
+    "vue": "^3.2.39",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@iconify/json": "^2.1.93",
-    "@types/node": "^18.7.5",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
-    "@unocss/preset-typography": "^0.45.7",
-    "@unocss/preset-wind": "^0.45.7",
-    "@unocss/transformer-directives": "^0.45.7",
-    "@vitejs/plugin-vue": "^3.0.3",
-    "concurrently": "^7.3.0",
+    "@iconify/json": "^2.1.110",
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "concurrently": "^7.4.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-vue": "^9.3.0",
+    "eslint-plugin-vue": "^9.5.1",
     "prettier": "2.7.1",
     "shx": "^0.3.4",
-    "unocss": "^0.45.7",
-    "unplugin-icons": "^0.14.8",
-    "unplugin-vue-components": "^0.22.4",
-    "vite": "^3.0.7",
-    "vite-plugin-pages": "^0.25.0"
+    "unocss": "^0.45.22",
+    "unplugin-icons": "^0.14.10",
+    "unplugin-vue-components": "^0.22.7",
+    "vite": "^3.1.3",
+    "vite-plugin-pages": "^0.26.0"
   }
 }
