@@ -12,8 +12,8 @@ const toggleDark = useToggle(isDark);
       title="Toggle dark mode"
       @click="toggleDark()"
     >
-      <carbon-moon v-if="isDark" class="icon-inline" />
-      <carbon-sun v-else class="icon-inline" />
+      <CarbonMoon v-if="isDark" class="icon-inline" />
+      <CarbonSun v-else class="icon-inline" />
     </button>
 
     <a
@@ -23,7 +23,7 @@ const toggleDark = useToggle(isDark);
       target="_blank"
       title="GitHub"
     >
-      <carbon-logo-github class="icon-inline" />
+      <CarbonLogoGithub class="icon-inline" />
     </a>
   </nav>
 </template>

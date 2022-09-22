@@ -25,7 +25,7 @@ function go() {
   <div class="space-y-4">
     <div>
       <p class="text-4xl">
-        <carbon-sailboat-offshore class="inline-block" />
+        <CarbonSailboatOffshore class="inline-block" />
       </p>
       <p class="text-xl">Kirby Vue Lightkit</p>
       <p class="text-sm opacity-75">Opinionated Kirby + Vue Starter Template</p>
