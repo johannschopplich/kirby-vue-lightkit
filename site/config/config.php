@@ -22,14 +22,6 @@ return [
             'active' => env('KIRBY_CACHE', false),
             'ignore' => fn (\Kirby\Cms\Page $page) => $page->kirby()->user() !== null
         ]
-    ],
-
-    'kirby-helpers' => [
-        'vite' => [
-            'server' => [
-                'host' => 'localhost'
-            ]
-        ]
     ]
 
 ];
