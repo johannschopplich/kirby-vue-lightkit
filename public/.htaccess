@@ -21,7 +21,7 @@
 </IfModule>
 
 # Pass the Authorization header to PHP.
-SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
 
 # Allow cross-origin access to web fonts.
 <IfModule mod_headers.c>
