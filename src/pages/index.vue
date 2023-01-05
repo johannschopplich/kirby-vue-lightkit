@@ -31,7 +31,7 @@ function go() {
       <p class="text-sm opacity-75">Opinionated Kirby + Vue Starter Template</p>
     </div>
 
-    <form class="flex max-w-sm space-x-3 w-full">
+    <form class="flex w-full max-w-sm space-x-3">
       <label for="input" hidden>What’s your name?</label>
       <input
         id="input"

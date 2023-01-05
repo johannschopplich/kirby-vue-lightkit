@@ -6,7 +6,7 @@ const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <nav class="flex flex-wrap space-x-4 box">
+  <nav class="box flex flex-wrap space-x-4">
     <button
       class="cursor-pointer text-2xl hover:text-blue-600"
       title="Toggle dark mode"
@@ -17,7 +17,7 @@ const toggleDark = useToggle(isDark);
     </button>
 
     <a
-      class="cursor-pointer text-current text-2xl"
+      class="cursor-pointer text-2xl text-current"
       rel="noreferrer"
       href="https://github.com/johannschopplich/kirby-vue-lightkit"
       target="_blank"

@@ -1,8 +1,7 @@
 <template>
-  <header class="w-full top-4 left-0 z-10 sticky">
-    <nav class="flex flex-wrap space-x-4 box">
+  <header class="sticky top-4 left-0 z-10 w-full">
+    <nav class="box flex flex-wrap space-x-4">
       <RouterLink class="header-link" to="/">Home</RouterLink>
-
       <RouterLink class="header-link" to="/about">About</RouterLink>
     </nav>
   </header>
@@ -10,7 +9,7 @@
 
 <style scoped>
 .header-link {
-  --at-apply: "text-gray-800 whitespace-nowrap dark:text-white hover:text-blue-600";
+  --at-apply: "whitespace-nowrap text-gray-800 hover:text-blue-600 dark:text-white";
 }
 
 .header-link.router-link-active {
