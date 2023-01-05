@@ -4,33 +4,33 @@
     "kirby": "env-cmd --use-shell \"php -S \\$KIRBY_DEV_HOSTNAME:\\$KIRBY_DEV_PORT -t public vendor/getkirby/cms/router.php\"",
     "dev": "shx rm -rf public/dist && concurrently \"npm:kirby\" \"vite\"",
     "build": "vite build",
-    "lint": "eslint \"src/**/*.{ts,vue}\" --ignore-path .gitignore",
+    "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"src/**/*.{ts,vue}\" --ignore-path .gitignore"
   },
   "dependencies": {
-    "@unocss/reset": "^0.45.22",
-    "@vueuse/core": "^9.2.0",
-    "vue": "^3.2.39",
-    "vue-router": "^4.1.5"
+    "@unocss/reset": "^0.48.0",
+    "@vueuse/core": "^9.10.0",
+    "ofetch": "^1.0.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.1.8",
-    "@types/node": "^18.7.18",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
-    "@typescript-eslint/parser": "^5.38.0",
-    "@vitejs/plugin-vue": "^3.1.0",
-    "concurrently": "^7.4.0",
+    "@iconify-json/carbon": "^1.1.13",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@types/node": "^18.11.18",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "concurrently": "^7.6.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.23.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-vue": "^9.5.1",
-    "prettier": "2.7.1",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-tailwindcss": "^3.8.0",
+    "prettier": "2.8.1",
     "shx": "^0.3.4",
-    "unocss": "^0.45.22",
-    "unplugin-icons": "^0.14.10",
-    "unplugin-vue-components": "^0.22.7",
-    "vite": "^3.1.3",
-    "vite-plugin-pages": "^0.26.0"
+    "unocss": "^0.48.0",
+    "unplugin-icons": "^0.15.0",
+    "unplugin-vue-components": "^0.22.12",
+    "vite": "^4.0.4",
+    "vite-plugin-pages": "^0.28.0"
   }
 }

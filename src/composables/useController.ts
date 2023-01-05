@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { readonly, shallowReactive } from "vue";
-import { $fetch } from "ohmyfetch";
+import { $fetch } from "ofetch";
 
 export interface ControllerData {
   readonly __status: string;
