@@ -9,17 +9,12 @@ use Kirby\Toolkit\Html;
 
 class PageMeta
 {
-    protected Page $page;
     protected array $metadata = [];
 
-    public function __construct($page)
+    public function __construct(protected Page $page)
     {
-        $this->page = $page;
         $defaults = option('kirby-helpers.meta.defaults', []);
-
-        if (!empty($defaults)) {
-            $this->metadata = is_callable($defaults) ? $defaults(kirby(), site(), $this->page) : $defaults;
-        }
+        $this->metadata = is_callable($defaults) ? $defaults(kirby(), site(), $this->page) : $defaults;
 
         if (method_exists($this->page, 'metadata')) {
             $this->metadata = A::merge($this->metadata, $this->page->metadata());
@@ -52,6 +47,7 @@ class PageMeta
         }
 
         $field = $this->page->content()->get($key);
+
         if ($field->exists() && $field->isNotEmpty() && $field->value() !== '[]') {
             return $field;
         }

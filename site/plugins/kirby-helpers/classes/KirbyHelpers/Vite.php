@@ -7,14 +7,13 @@ use Kirby\Http\Uri;
 
 class Vite
 {
-    protected static $instance;
+    public array|null $manifest = null;
+    protected static Vite|null $instance = null;
 
-    public static function instance()
+    public static function instance(): Vite
     {
         return static::$instance ??= new static();
     }
-
-    public $manifest;
 
     public function __construct()
     {
@@ -36,15 +35,6 @@ class Vite
         return $this->manifest === null;
     }
 
-    public function prodUrl(string $path): string
-    {
-        return implode('/', array_filter([
-            kirby()->url(),
-            option('kirby-helpers.vite.build.outDir', 'dist'),
-            $path
-        ], 'strlen'));
-    }
-
     public function devUrl(string $path): string
     {
         $uri = new Uri([
@@ -55,6 +45,29 @@ class Vite
         ]);
 
         return $uri->toString();
+    }
+
+    public function prodUrl(string $path): string
+    {
+        return implode('/', array_filter([
+            kirby()->url(),
+            option('kirby-helpers.vite.build.outDir', 'dist'),
+            $path
+        ], 'strlen'));
+    }
+
+    /**
+     * Outputs `<link>` tags for each CSS file of an entry point
+     *
+     * @param string $entry The JavaScript entry point that includes your CSS
+     */
+    public function css(string $entry)
+    {
+        if (is_array($this->manifest)) {
+            foreach ($this->manifest[$entry]['css'] as $file) {
+                return css($this->prodUrl($file));
+            }
+        }
     }
 
     /**
@@ -71,19 +84,5 @@ class Vite
         }
 
         return js($url, ['type' => 'module']);
-    }
-
-    /**
-     * Outputs `<link>` tags for each CSS file of an entry point
-     *
-     * @param string $entry The JavaScript entry point that includes your CSS
-     */
-    public function css(string $entry)
-    {
-        if (is_array($this->manifest)) {
-            foreach ($this->manifest[$entry]['css'] as $file) {
-                return css($this->prodUrl($file));
-            }
-        }
     }
 }
