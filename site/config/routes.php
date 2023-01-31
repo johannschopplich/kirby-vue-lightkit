@@ -8,26 +8,23 @@ return [
         'pattern' => 'controllers/(:all).json',
         'action' => function ($key) {
             $kirby = kirby();
-            $cache = $kirby->cache('pages');
-            $cacheKey = $key . '-json';
-            $data = $cache->get($cacheKey);
+            $data = $kirby->cache('pages')->getOrSet(
+                $key . '-json',
+                function () use ($kirby, $key) {
+                    $controller = Controller::load($kirby->root('controllers') . '/' . $key . '.php');
 
-            if ($data === null) {
-                $controller = Controller::load($kirby->root('controllers') . '/' . $key . '.php');
+                    if ($controller === null) {
+                        return Response::json([
+                            'error' => 'The controller does not exist'
+                        ], 404);
+                    }
 
-                if ($controller === null) {
-                    return Response::json([
-                        'error' => 'The controller does not exist'
-                    ], 404);
+                    return $controller->call(null, [
+                        'kirby' => $kirby,
+                        'site' => $kirby->site()
+                    ]);
                 }
-
-                $data = $controller->call(null, [
-                    'kirby' => $kirby,
-                    'site' => $kirby->site()
-                ]);
-
-                $cache->set($cacheKey, $data);
-            }
+            );
 
             return Response::json($data);
         }
