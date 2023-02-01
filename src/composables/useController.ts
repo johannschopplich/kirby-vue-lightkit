@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { readonly, shallowReactive } from "vue";
 import { $fetch } from "ofetch";
 
