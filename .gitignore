@@ -22,7 +22,7 @@ components.d.ts
 /site/config/.license
 
 # Plugins
-!/site/plugins/*
+/site/plugins/*
 !/site/plugins/.gitkeep
 
 # Build assets
